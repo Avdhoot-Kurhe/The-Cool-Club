@@ -6,7 +6,7 @@ const productRouter=Router();
 
 productRouter.get('/',ProductController.getProduct)
 productRouter.get('/search',ProductController.searchProduct)
-productRouter.add('/create',ProductController.addProduct)
+productRouter.post('/create',ProductController.addProduct)
 productRouter.get('/:id',ProductController.getSingleProduct)
 productRouter.put('/:id',ProductController.updateProduct)
 productRouter.delete('/:id',ProductController.deleteProduct)

@@ -4,12 +4,13 @@ const cors = require('cors');
 const port=process.env.PORT
 const { connection } = require('./config/db.config');
 const { userRouter } = require('./routes/user.route');
-const cors=require('cors');
 const { productRouter } = require('./routes/product.route');
 const { cartRouter } = require('./routes/cart.route');
 const { deliveryAddressRouter } = require('./routes/deliveryaddress.route');
 const { billingAddressRouter } = require('./routes/billingaddress.route');
 const { orderRouter } = require('./routes/order.route');
+const { reviewRouter } = require('./routes/review.route');
+const { paymentMethodRouter } = require('./routes/paymentmethod.route');
 const app = express();
 app.use(cors());
 app.use(express.json())
@@ -25,6 +26,8 @@ app.use('/cart',cartRouter);
 app.use('/myorders',orderRouter);
 app.use('/deliveryAddress',deliveryAddressRouter);
 app.use('/billingAddress',billingAddressRouter);
+app.use('/reviews',reviewRouter);
+app.use('/paymentmethod',paymentMethodRouter);
 
 
 
