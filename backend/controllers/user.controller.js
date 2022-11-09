@@ -71,7 +71,7 @@ const getProfile = async (req, res) => {
 const updateProfile = async (req, res) => {
   let update = req.body;
   try {
-    const updatestatus = await UserModel.updateOne({ _id: update.uid },{...update});
+    const updatestatus = await UserModel.updateOne({ email: update.email },{...update});
     res.send({ updatestatus });
   } catch (err) {
     res.send({ msg: "something went wrong", error: err });
