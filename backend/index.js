@@ -3,14 +3,18 @@ require("dotenv").config();
 const cors = require('cors');
 const port=process.env.PORT
 const { connection } = require('./config/db.config');
+const { userRouter } = require('./routes/user.route');
+const cors=require('cors');
 const app = express();
-app.use(express.json());
-app.use(cors)
+app.use(cors());
+app.use(express.json())
+
 
 app.get('/',(req, res)=>{
     res.send("Welcome to the Backend!");
 })
 
+app.use('/user',userRouter);
 
 
 
@@ -23,5 +27,5 @@ app.listen(port,async()=>{
     }catch(e){
         console.log(404,"Couldn't connect");
     }
-    console.log("connected to server")
+    console.log(`listening on port ${port}`)
 })

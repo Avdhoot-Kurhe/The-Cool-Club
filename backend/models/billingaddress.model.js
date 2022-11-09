@@ -1,10 +1,18 @@
 const mongoose = require('mongoose');
 
 const billingaddressSchema= new mongoose.Schema({
-    productid:{type:String, required:true},
     uid:{type:String, required:true},
+    firstname:{type:String, required:true},
+    lastname:{type:String, required:true},
+    address1:{type:String, required:true},
+    address2:{type:String},
+    country:{type:String, required:true},
+    state:{type:String, required:true},
+    city:{type:String, required:true},
+    pincode:{type:Number, required:true},
+    phone:{type:Number, required:true},
    
-},{timestamps:true});
+});
 
 const BillingaddressModel=mongoose.model('billingaddress',billingaddressSchema);
 
