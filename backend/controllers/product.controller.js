@@ -30,11 +30,20 @@ const updateProduct = async (req, res) => {
     res.send({ msg: "Something went wrong", error: err });
   }
 };
+const getSingleProduct = async (req, res) => {
+  let { id } = req.params;
+  try {
+    let product = await ProductModel.find({ _id: id });
+    res.send({ msg: "Product updated successfully", product });
+  } catch (err) {
+    res.send({ msg: "Something went wrong", error: err });
+  }
+};
 const deleteProduct = async (req, res) => {
   let { id } = req.params;
   try {
     let deletestatus = await ProductModel.deleteOne({ _id: id });
-    res.send({ msg: "Prodcut deleted successfully", deletestatus });
+    res.send({ msg: "Product deleted successfully", deletestatus });
   } catch (err) {
     res.send({ msg: "Something went wrong", error: err });
   }
@@ -54,8 +63,12 @@ const searchProduct = async (req, res) => {
 
 const ProductController = {
   getProduct,
+  getSingleProduct,
   searchProduct,
   addProduct,
   updateProduct,
   deleteProduct,
+};
+module.exports = {
+  ProductController,
 };

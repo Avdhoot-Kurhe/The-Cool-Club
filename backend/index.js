@@ -5,6 +5,11 @@ const port=process.env.PORT
 const { connection } = require('./config/db.config');
 const { userRouter } = require('./routes/user.route');
 const cors=require('cors');
+const { productRouter } = require('./routes/product.route');
+const { cartRouter } = require('./routes/cart.route');
+const { deliveryAddressRouter } = require('./routes/deliveryaddress.route');
+const { billingAddressRouter } = require('./routes/billingaddress.route');
+const { orderRouter } = require('./routes/order.route');
 const app = express();
 app.use(cors());
 app.use(express.json())
@@ -15,8 +20,11 @@ app.get('/',(req, res)=>{
 })
 
 app.use('/user',userRouter);
-
-
+app.use('/products',productRouter);
+app.use('/cart',cartRouter);
+app.use('/myorders',orderRouter);
+app.use('/deliveryAddress',deliveryAddressRouter);
+app.use('/billingAddress',billingAddressRouter);
 
 
 
