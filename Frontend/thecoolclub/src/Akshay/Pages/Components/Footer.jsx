@@ -1,6 +1,8 @@
 import {
   Box,
   Button,
+  Center,
+  Heading,
   HStack,
   Image,
   Input,
@@ -73,16 +75,28 @@ const footerLinks = [
 const Footer = () => {
   return (
     <Box p="5vh 10%">
+      <Center w="100%" mb="8%">
+        <VStack>
+          <Heading>Bath & Body Works</Heading>
+          <Text textAlign="center" w="75%" color="#666">
+            Bath and Body Works is your go-to place for gifts & goodies that
+            surprise & delight. From fresh fragrances to soothing skin care, we
+            make finding your perfect something special a happy-memory-making
+            experience. Searching for new seasonal creations or your favorite
+            discontinued scents? We’ve got you covered there, too. Oh! And while
+            you're browsing, shop our latest & greatest selection of lotions,
+            soaps and candles!
+          </Text>
+        </VStack>
+      </Center>
       <HStack gap="20px" display="flex" justifyContent="space-around">
         {/* Contact Form Section */}
         <VStack display="grid" w={{ md: "30%", base: "100%" }}>
           <Text fontHeight="12px">
             GET EMAIL OFFERS & THE LATEST NEWS FROM BATH & BODY WORKS!
           </Text>
-          <label>
-            Enter Email
-          </label>
-            <Input w="80%" required />
+          <label>Enter Email</label>
+          <Input w="80%" required />
           <label>Confirm Email</label>
           <HStack>
             <Input required />
