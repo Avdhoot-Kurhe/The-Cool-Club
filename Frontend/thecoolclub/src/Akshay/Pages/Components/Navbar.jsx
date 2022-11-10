@@ -41,7 +41,7 @@ const Navbar = () => {
     <>
       <Box display={{base:"none",md:"block"}}>
         {/* Navbar Perk Point Section (medium to large screen) */}
-        <HStack p={"10px 5%"} bg={"#f2f2f2"} w={"100%"}>
+        <HStack p={"10px 5%"} bg={"#f2f2f2"}>
           <HStack>
             <Text color={"#e20887"} fontWeight={"bold"}>
               POINTS. PERKS. EXCLUSIVES.

@@ -1,8 +1,12 @@
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar"
 
 const LandingPage = () => {
     return(
-        <Navbar/>
+        <>
+            <Navbar/>
+            <Footer/>
+        </>
     )
 }
 
