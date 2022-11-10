@@ -6,6 +6,7 @@ const paymentmethodSchema= new mongoose.Schema({
     cardnumber:{type:Number, required:true},
     cardtype:{type:String, required:true},
     expiry:{type:Date, required:true},
+    setasDefault:{type:Boolean}
 },{timestamps:true});
 
 const PaymentmethodModel=mongoose.model('paymentmethod',paymentmethodSchema);
