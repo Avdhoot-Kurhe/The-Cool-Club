@@ -1,5 +1,6 @@
 import {
-    ButtonGroup,
+  Button,
+  ButtonGroup,
   Center,
   Grid,
   GridItem,
@@ -9,6 +10,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import Category from "./Category";
 
 const tabsData = [
   {
@@ -44,20 +46,71 @@ const tabsData = [
 ];
 
 const buttonNames = [
-    {
-        
-    }
-]
+  {
+    title: "STOCKING STUFFERS",
+  },
+  {
+    title: "GIFT SETS",
+  },
+  {
+    title: "GIFTS UNDER $15",
+  },
+  {
+    title: "GIFTS UNDER $40",
+  },
+  {
+    title: "GIFTS FOR HER",
+  },
+  {
+    title: "GIFTS FOR HIM",
+  },
+  {
+    title: "STOCKING STUFFERS",
+  },
+];
 
 const GoodThings = () => {
   return (
     <>
-      <Center w="100%">
-        <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw9a12e321/images/Christmas2022/xcat_moxy-launch_fa3_hb.jpg?yocs=s_" />
+      <Center>
+        <Image
+          p="10px 0"
+          w="80%"
+          src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw7927178e/images/Christmas2022/b1g1candles_c1_16x9.gif?yocs=s_"
+        />
       </Center>
-      <ButtonGroup></ButtonGroup>
+      <Category />
       <Center w="100%">
-        <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw126cc0be/images/Christmas2022/xcat_hp-gifting-zone_c1_hb.jpg?yocs=s_" />
+        <Image
+          p="2% 12%"
+          src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw9a12e321/images/Christmas2022/xcat_moxy-launch_fa3_hb.jpg?yocs=s_"
+        />
+      </Center>
+      <Center w="100%">
+        <ButtonGroup
+          w="90%"
+          p="2% 5%"
+          gap="20px"
+          justifyContent="center"
+          flexWrap="wrap"
+        >
+          {buttonNames.map((el) => (
+            <Button
+              color="white"
+              bg="black"
+              borderRadius="none"
+              _hover={{ color: "black", bg: "white" }}
+            >
+              {el.title}
+            </Button>
+          ))}
+        </ButtonGroup>
+      </Center>
+      <Center w="100%">
+        <Image
+          p="2% 12%"
+          src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw126cc0be/images/Christmas2022/xcat_hp-gifting-zone_c1_hb.jpg?yocs=s_"
+        />
       </Center>
       <Heading fontSize="24px" textAlign="center" p="2%">
         MORE GOOD THINGS, THIS WAY

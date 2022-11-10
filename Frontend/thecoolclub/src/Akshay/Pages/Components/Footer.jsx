@@ -6,6 +6,7 @@ import {
   HStack,
   Image,
   Input,
+  Link,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -126,12 +127,12 @@ const Footer = () => {
               alignSelf="flex-start"
             >
               {el.map((item, i) => (
-                <Text
+                <Link
                   color={i == 0 ? "black" : "#666"}
                   fontWeight={i == 0 ? "bold" : ""}
                 >
                   {item.text}
-                </Text>
+                </Link>
               ))}
             </VStack>
           );
