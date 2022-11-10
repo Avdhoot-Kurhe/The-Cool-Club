@@ -13,7 +13,7 @@ const authorisation=(authorisiedrole)=>{
         if(decode){
             const user=await UserModel.findOne({_id: decode.uid})
             console.log(user)
-            if(user.role==="Admin") next()
+            if(user.role==="admin") next()
             else{
             res.send("Access Denied");
         }
