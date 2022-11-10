@@ -17,7 +17,8 @@ import {
   Heading,
   Text,
   Select,
-  Checkbox
+  Checkbox,
+  Radio
 } from "@chakra-ui/react";
 
 import "./shippingPage.css";
@@ -56,7 +57,6 @@ const ShippingPage = () => {
       <div className="main_shipping_page">
         <div className="shipping_page_slider"></div>
         <div className="shipping_page">
-          <div className="shipping_page_left_main"></div>
           <div className="shipping_page_right_main">
             <div className="shipping_page_right_main_accordion">
               <Accordion defaultIndex={[0]} allowMultiple>
@@ -304,6 +304,50 @@ const ShippingPage = () => {
               <div>
               <Checkbox defaultChecked  border='1px solid white'>Checkbox</Checkbox>
               </div>
+              <div>
+                <p>Are you shipping a gift?</p>
+                <input type="radio" /> Yes
+                <input type="radio" /> No
+              </div>
+            </div>
+            <div className="shipping_page_right_main_shippingMethod">
+               <Box>SHIPPING METHOD</Box>
+                <Box display='flex'>
+                   <Box>
+                   <p><input type="radio" />Standrad (3-7 business days) <br/>
+                   Estimated delivery Tues Nov 15 - Mon Nov 21 Details</p>
+                   </Box>
+                   <Box>$6.99</Box>
+                </Box>
+
+                <Box display='flex'>
+                   <Box>
+                   <p><input type="radio" />Expedited (2 business days) <br/>
+                   Estimated delivery Mon Nov 21 Details</p>
+                   </Box>
+                   <Box>$6.99</Box>
+                </Box>
+
+                <Box display='flex'>
+                   <Box>
+                   <p><input type="radio" />Overnight (1 business days) <br/>
+                   Estimated delivery Thurs Nov 10 Details</p>
+                   </Box>
+                   <Box>$6.99</Box>
+                </Box>
+
+                <Text> Please complete all form fields before continuing</Text>
+
+                <Box>
+                  <Button>GO TO BILLING </Button>
+                  <Button> Privacy Policy</Button>
+                </Box>
+
+            </div>
+          </div>
+          <div className="shipping_page_left_main">
+            <div>
+               <Heading> YOUR ORDER</Heading>
             </div>
           </div>
         </div>
