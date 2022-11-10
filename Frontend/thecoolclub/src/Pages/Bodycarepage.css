@@ -26,6 +26,7 @@
     height: 11%;
     width: 98%;
     margin-top: 1%;
+    display: flex;
 }
 
 .allbodycare{
@@ -39,7 +40,7 @@
 
 .filtersortdiv{
     border: 1px solid black;
-    height: 5%;
+    height: 3%;
     width: 100%;
     margin-top: 1%;
 }
@@ -173,3 +174,124 @@
     font-weight: 500;
     color: rgb(51,51,51);
 }
+
+.bodycarepagerighttopdivin{
+    height: 92%;
+    width: 19%;
+    margin: 1% 1% 1% 1%;
+    border: 1px solid green;
+}
+
+.bodycarepagerighttopdivin:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.bodycarepagerighttopdivinimg{
+    height: 80%;
+    width: 100%;
+    border: 1px solid red;
+}
+
+.bodycarepagerighttopdivinimgin{
+    height: 100%;
+    width: 100%;
+}
+
+.bodycarepagerighttopdivinname{
+    border: 1px solid black;
+    height: 18%;
+    width: 98%;
+    margin: 0.5% 0.5% 0.5% 0.5%;
+}
+
+.bodycarepagerighttopdivinnamein{
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.homelocate{
+    /* border: 1px solid black; */
+    height: 1.5%;
+    margin-top: 0.25%;
+    margin-left: 0.25%;
+}
+
+.homelocatein{
+    font-size: 10px;
+    text-align: left;
+}
+
+.topoffers{
+    /* border: 1px solid black; */
+    height: 1.5%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.homeoffersin{
+    height: 90%;
+    width: 90%;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.homeoffersin:hover{
+    cursor: pointer;
+}
+
+.topofferslist{
+    /* border: 1px solid red; */
+    height: 10%;
+    margin-top: 1.5%;
+    margin-left: 1%;
+}
+
+.topofferslistin{
+    border: 1px solid white;
+    height: 25%;
+    width: 80%;
+    margin-top: 2%;
+}
+
+.topofferslistinpara{
+    color: rgb(51,51,51);
+    font-size: 13px;
+    text-align: left;
+}
+
+.topofferslistinpara:hover{
+    cursor: pointer;
+    color: rgb(92, 92, 243);
+}
+
+.filterdiv{
+    border: 1px solid green;
+    height: 90%;
+    width: 75%;
+    background-color: rgb(242,242,242);
+    display: flex;
+}
+
+.filterdivpara{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    width: 80px;
+    height: 30px;
+    /* border: 1px solid red; */
+}
+
+.filterdivproducttype{
+    border: 1px solid green;
+    height: 95%;
+    width: 30%;
+    margin-left: 2%;
+}
+
+.sortproducthead{
+    font-weight: 600;
+    margin-top: 15px;
+}
+
