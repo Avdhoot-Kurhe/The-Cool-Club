@@ -4,10 +4,10 @@ const { OrderController } = require('../controllers/order.controller');
 const orderRouter=Router();
 
 
-orderRouter.get('/',OrderController.getOrderItems)
-orderRouter.post('/create',OrderController.addToOrders)
-orderRouter.put('/:id',OrderController.updateOrderItem)
-orderRouter.delete('/:id',OrderController.deleteOrderItem)
+orderRouter.get('/',authentication,authorisation(['user','admin']),OrderController.getOrderItems)
+orderRouter.post('/create',authentication,authorisation(['user']),OrderController.addToOrders)
+orderRouter.put('/:id',authentication,authorisation(['user','admin']),OrderController.updateOrderItem)
+orderRouter.delete('/:id',authentication,authorisation(['user']),OrderController.deleteOrderItem)
 
 module.exports={
     orderRouter,
