@@ -6,8 +6,7 @@ import ShippingPage from './components/pankajsingh/Shipping/ShippingPage';
 function App() {
   return (
     <div className="App">
-      <Bodycarepage />
-
+      {/* <Bodycarepage /> */}
      <ShippingPage />
     </div>
   );
