@@ -1,0 +1,175 @@
+.bodycarepage{
+    border: 1px solid red;
+    height: 2000px;
+    
+}
+
+.bodycarepagedispl{
+    display: flex;
+}
+
+.bodycarepageright{
+    border: 1px solid blue;
+    height: 2000px;
+    width: 70%;
+    margin-left: 2%;
+}
+
+.bodycarepageleft{
+    border: 1px solid blue;
+    height: 2000px;
+    width: 28%;
+}
+
+.bodycarepagerighttopdiv{
+    border: 1px solid black;
+    height: 11%;
+    width: 98%;
+    margin-top: 1%;
+}
+
+.allbodycare{
+    border: 1px solid red;
+    height: 4%;
+    width: 100%;
+    margin-top: 1.5%;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+.filtersortdiv{
+    border: 1px solid black;
+    height: 5%;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.bodycareproductsdiv{
+    border: 1px solid green;
+    height: 75%;
+    width: 99%;
+    margin: 1% 1% 1% 1%;
+}
+
+.bodycareproducts1{
+    border: 1px solid black;
+    height: 30%;
+    display: flex;
+}
+
+.bodycareproductsinside{
+    border: 1px solid blue;
+    height: 95%;
+    width: 23%;
+    margin: 0.75% 0.75% 0.75% 0.75%;
+}
+
+.bodycareproductsinsideimg{
+    /* border: 1px solid red; */
+    height: 65%;
+    width: 95%;
+    margin: 1% 1% 1% 1%;
+}
+
+.bodycareproductsinsidead{
+    /* border: 1px solid black; */
+    height: 4%;
+    width: 80%;
+    margin: auto;
+    margin-top: 0.5%;
+}
+
+.bodycareproductsinsidename{
+    /* border: 1px solid blue; */
+    height: 5%;
+    width: 80%;
+    margin: auto;
+    margin-top: 0.5%;
+}
+
+.bodycareproductsinsidetype{
+    /* border: 1px solid black; */
+    height: 3%;
+    width: 80%;
+    margin: auto;
+    margin-top: 0.5%;
+}
+
+.bodycareproductsinsideprice{
+    /* border: 1px solid blue; */
+    height: 5%;
+    width: 65%;
+    margin: auto;
+    margin-top: 0.5%;
+}
+
+.bodycareproductsinsideaddtobag{
+    /* border: 1px solid black; */
+    height: 7.5%;
+    width: 95%;
+    margin: 0.5% 0.5% 0.5% 0.5%;
+    background-color: rgb(51,51,51);
+}
+
+.bodycareproductsinsiderating{
+    border: 1px solid black;
+    height: 4.5%;
+    width: 95%;
+    margin: 0.5% 0.5% 0.5% 0.5%;
+}
+
+.bodycareproductsinsideaddtobagbtn{
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 100%;
+    background-color: rgb(51,51,51);
+    color: rgb(242,242,242);
+    font-size: 12px;
+}
+
+.bodycareproductsinsideaddtobagbtn:hover{
+    background-color: rgb(242,242,242);
+    color: rgb(51,51,51);
+    cursor: pointer;
+}
+
+.bodycareproductsinsideimgin{
+    height: 100%;
+    width: 42%;
+    margin: auto;
+}
+
+.bodycareproductsinsideadpara{
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 700;
+    color: rgb(66,86,153);
+}
+
+.bodycareproductsinsidenamepara{
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    font-weight: 700;
+    color: rgb(51,51,51);
+}
+
+.bodycareproductsinsidetypein{
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgb(103, 105, 105);
+}
+
+.bodycareproductsinsidepricein{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    font-weight: 500;
+    color: rgb(51,51,51);
+}
