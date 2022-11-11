@@ -13,7 +13,7 @@ const getDeliveryAddresses = async (req, res) => {
 const addDeliveryAddress = async (req, res) => {
   let newaddress = req.body;
   try {
-    let product = await new DeliveryAddressModel.insertMany([newaddress]);
+    let product = await  DeliveryAddressModel.insertMany([newaddress]);
     res.send({ msg: "Address added successfully", newaddress: product });
   } catch (err) {
     res.send({

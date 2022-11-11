@@ -20,7 +20,7 @@ const addReviews = async (req, res) => {
     //   },
     // });
     // if (product) {
-      let addreview = await new ReviewModel.insertMany({ review });
+      let addreview = await  ReviewModel.insertMany({ review });
       res.send(addreview);
     // }
   } catch (err) {

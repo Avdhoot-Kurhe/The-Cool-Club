@@ -9,6 +9,7 @@ const authorisation = (authorisiedroles) => {
         const user = await UserModel.findOne({ _id:uid });
         console.log(user);
         let role=user.role;
+        console.log(role)
         if (authorisiedroles.includes(role)) {
           next();
         } else {
