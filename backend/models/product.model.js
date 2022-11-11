@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const productSchema= new mongoose.Schema({
+    productimageurl:{type:String, required:true,},
     title:{type:String, required:true}, // product main title
     subtitle:{type:String, required:true}, // product sub title
     category:{type:String, required:true}, // product category eg:Body care
