@@ -1,8 +1,8 @@
-const { BillingAddressModel } = require("../models/BillingAddress.model");
+const { BillingaddressModel } = require("../models/billingAddress.model");
 
 const getBillingAddresses = async (req, res) => {
   try {
-    let BillingAddress = await BillingAddressModel.find();
+    let BillingAddress = await BillingaddressModel.find();
     res.send(BillingAddress);
   } catch (err) {
     res.send({
@@ -13,8 +13,8 @@ const getBillingAddresses = async (req, res) => {
 const addBillingAddress = async (req, res) => {
   let newaddress = req.body;
   try {
-    let product = await new BillingAddressModel.insertMany([newaddress]);
-    res.send({ msg: "Address added successfully", newaddress: product });
+    let address = await  BillingaddressModel.insertMany([newaddress]);
+    res.send({ msg: "Address added successfully", newaddress: address });
   } catch (err) {
     res.send({
       msg: "Something went wrong while adding data to BillingAddress",
@@ -25,7 +25,7 @@ const updateBillingAddress = async (req, res) => {
   let { id } = req.params;
   try {
     let update = req.body;
-    let updatestatus = await BillingAddressModel.updateOne(
+    let updatestatus = await BillingaddressModel.updateOne(
       { _id: id },
       { ...update }
     );
@@ -40,7 +40,7 @@ const updateBillingAddress = async (req, res) => {
 const getSingleBillingAddress = async (req, res) => {
   let { id } = req.params;
   try {
-    let address = await BillingAddressModel.find({ _id: id });
+    let address = await BillingaddressModel.find({ _id: id });
     res.send(address);
   } catch (err) {
     res.send({ msg: "Something went wrong while updating BillingAddress" });
@@ -49,7 +49,7 @@ const getSingleBillingAddress = async (req, res) => {
 const deleteBillingAddress = async (req, res) => {
   let { id } = req.params;
   try {
-    let deletestatus = await BillingAddressModel.deleteOne({ _id: id });
+    let deletestatus = await BillingaddressModel.deleteOne({ _id: id });
     res.send({
       msg: "Address  deleted from BillingAddress successfully",
       deletestatus,

@@ -11,6 +11,7 @@ const { billingAddressRouter } = require('./routes/billingaddress.route');
 const { orderRouter } = require('./routes/order.route');
 const { reviewRouter } = require('./routes/review.route');
 const { paymentMethodRouter } = require('./routes/paymentmethod.route');
+const { candleRouter } = require('./routes/candle.route');
 const app = express();
 app.use(cors());
 app.use(express.json())
@@ -28,6 +29,7 @@ app.use('/deliveryAddress',deliveryAddressRouter);
 app.use('/billingAddress',billingAddressRouter);
 app.use('/reviews',reviewRouter);
 app.use('/paymentmethod',paymentMethodRouter);
+app.use('/candle',candleRouter);
 
 
 

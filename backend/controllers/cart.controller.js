@@ -2,16 +2,16 @@ const { CartModel } = require("../models/cart.model");
 
 const getCartItems = async (req, res) => {
   try {
-    let cartitems = await CartModel.find();
+    let cartitems = await CartModel.find({});
     res.send(cartitems);
   } catch (err) {
-    res.send({ msg: "Something went wrong while fetching data to cart" });
+    res.send({ msg: "Something went wrong while fetching data to cart",err });
   }
 };
 const addToCart = async (req, res) => {
   let newitem = req.body;
   try {
-    let product = await new CartModel.insertMany([newitem]);
+    let product = await CartModel.insertMany([newitem]);
     res.send({ msg: "Item added successfully", newitem: product });
   } catch (err) {
     res.send({ msg: "Something went wrong while adding data to cart" });
