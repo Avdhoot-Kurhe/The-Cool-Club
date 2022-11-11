@@ -8,7 +8,6 @@ const productSchema= new mongoose.Schema({
     price:{type:String, required:true},
     quantity:{type:String, required:true},
     availablequantity:{type:String, required:true},
-    producttitle:{type:String, required:true},
     shipit:{type:Boolean, required:true,default:true},
     pickupinstore:{type:Boolean, required:true},
     adminid:{type:String, required:true},
