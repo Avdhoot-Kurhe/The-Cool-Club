@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { CandleController } = require('../controllers/product.controller');
+const { CandleController } = require('../controllers/candle.controller');
 const { authentication } = require('../middlewares/authentication.middleware');
 const { authorisation } = require('../middlewares/authorisation.middleware');
 
