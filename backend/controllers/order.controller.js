@@ -11,7 +11,7 @@ const getOrderItems = async (req, res) => {
 const addToOrders = async (req, res) => {
   let newitem = req.body;
   try {
-    let neworder = await new OrderModel.insertMany([newitem]);
+    let neworder = await  OrderModel.insertMany([newitem]);
     res.send({ msg: "Item added successfully", newitem: neworder });
   } catch (err) {
     res.send({ msg: "Something went wrong while adding data to Order" });

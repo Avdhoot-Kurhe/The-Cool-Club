@@ -2,19 +2,21 @@ const { ProductModel } = require("../models/product.model");
 
 const getProduct = async (req, res) => {
   try {
-    let products = ProductModel.find();
+    let products =await ProductModel.find({});
     res.send(products);
   } catch (err) {
-    res.send({ msg: "Something went wrong", error: err });
+    res.send({ msg: "Something went wrong while fetching products", error: err });
   }
 };
 const addProduct = async (req, res) => {
   let newProduct = req.body;
+  newProduct.adminid=req.body.uid;
+  console.log(newProduct);
   try {
-    let product = new ProductModel.insertMany([newProduct]);
+    let product = await ProductModel.insertMany([{...newProduct}]);
     res.send({ msg: "Product added successfully", NewProduct: product });
   } catch (err) {
-    res.send({ msg: "Something went wrong", error: err });
+    res.send({ msg: "Something went wrong while adding product", error: err });
   }
 };
 const updateProduct = async (req, res) => {
@@ -52,8 +54,8 @@ const deleteProduct = async (req, res) => {
 const searchProduct = async (req, res) => {
   let { q } = req.query;
   try {
-    ProductModel.createIndexes({ title: "text" });
-    let products = await ProductModel.find({ title: { $regex: q } });
+  // ProductModel.createIndexes({ title: "text" });
+    let products = await ProductModel.find({ $search: { title: q } });
     console.log(q);
     res.send(products);
   } catch (err) {
