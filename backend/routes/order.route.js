@@ -6,9 +6,9 @@ const orderRouter=Router();
 
 
 orderRouter.get('/',authentication,authorisation(['user','admin']),OrderController.getOrderItems)
-orderRouter.post('/create',authentication,authorisation(['user']),OrderController.addToOrders)
+orderRouter.post('/create',authentication,authorisation(['user','admin']),OrderController.addToOrders)
 orderRouter.put('/:id',authentication,authorisation(['user','admin']),OrderController.updateOrderItem)
-orderRouter.delete('/:id',authentication,authorisation(['user']),OrderController.deleteOrderItem)
+orderRouter.delete('/:id',authentication,authorisation(['user','admin']),OrderController.deleteOrderItem)
 
 module.exports={
     orderRouter,

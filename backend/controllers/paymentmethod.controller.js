@@ -13,7 +13,7 @@ const addPaymentMethod = async (req, res) => {
   let paymentData = req.body;
 
   try {
-    let newPaymentDataStatus = await new PaymentmethodModel.insertMany([
+    let newPaymentDataStatus = await  PaymentmethodModel.insertMany([
       paymentData,
     ]);
     res.send({ msg: "Payment data added successfully", newPaymentDataStatus });
