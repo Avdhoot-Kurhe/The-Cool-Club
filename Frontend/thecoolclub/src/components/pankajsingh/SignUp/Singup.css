@@ -1,0 +1,30 @@
+.firstName_samllDiv {
+    width: 29%;
+  margin: auto;
+  text-align: left;
+}
+.firstName_samllDiv input {
+    width: 95%;
+    height: 30px;
+}
+.marginDiv{
+    margin-top: 3%;
+}
+
+.firstName_samllDiv
+    :before { content:"*"; }
+
+
+.createAccount_btn{
+    width: 14%;
+    background-color: black;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+}
+.question_div_width{
+    width: 23%;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 7%;
+}
