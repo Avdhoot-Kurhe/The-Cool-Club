@@ -62,6 +62,23 @@ const BillingPage = () => {
       user_number : "8851505898"
     }
   ]
+
+  const payment_img = [
+    {
+      img : "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dwf634b9ab/images/payments/payment-cc.png?yocs=o_s_",
+
+      img : "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dwf634b9ab/images/payments/payment-cc.png?yocs=o_s_"
+    ,
+    
+      img : "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dwf634b9ab/images/payments/payment-cc.png?yocs=o_s_"
+    ,
+    
+      img : "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dwf634b9ab/images/payments/payment-cc.png?yocs=o_s_"
+    ,
+    
+      img : "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dwf634b9ab/images/payments/payment-cc.png?yocs=o_s_"
+    }
+  ]
   return (
     <div>
       <div className="main_shipping_page">
@@ -205,7 +222,64 @@ const BillingPage = () => {
             </div>
 
             <div className="payment_method">
+                  <h2>PAYMENT METHOD</h2>
+                  <div>
+                    <input type="radio"  />
+                  {
+                    payment_img.map((item) => (
+                      <img  src={item.img} alt="img"/>
+                    ))
+                  }
+                  <span>
+                    <input type="radio"/>
+                    <img src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dw39bcf393/images/payments/payment-ppal.svg?yocs=o_s_" />
+                    </span>
 
+                  </div>
+                  <div>
+                    <FormControl isRequired> 
+                    <FormLabel>Required</FormLabel>
+                    </FormControl>
+                  </div>
+
+                <div>
+                   <FormControl isRequired>
+                      <FormLabel> Name on Card</FormLabel>
+                      <Input />
+
+                      <FormLabel>Number</FormLabel>
+                      <Input />
+
+                      <FormLabel>Expiration Date</FormLabel>
+                      <Select>
+                        <option value="">Month</option>
+                        <option value="">Jan</option>
+                        <option value="">Fed</option>
+                        <option value="">March</option>
+                        <option value="">April</option>
+                        <option value="">May</option>
+                      </Select>
+
+                      <Select>
+                        <option value="">Year</option>
+                        <option value="">Jan</option>
+                        <option value="">Fed</option>
+                        <option value="">March</option>
+                        <option value="">April</option>
+                        <option value="">May</option>
+                      </Select>
+
+                      <Box>
+                         <FormLabel>Security Code</FormLabel>
+                         <Input />
+                      </Box>
+                   </FormControl>
+
+                   <Box mb="4rem">
+                     <Button> Place Order</Button>
+                     <Text> Privacy Policy</Text>
+                   </Box>
+                </div>
             </div>
           </div>
 
@@ -248,6 +322,18 @@ const BillingPage = () => {
             <Box display='flex' justifyContent='space-between' borderTop="5px solid rgb(229,229,229)" pt="1rem" fontWeight='bold'>
                <Box ml="2rem"> ORDER TOTAL (USD)</Box>
                <Box mr="3rem"> $20.34</Box>
+            </Box>
+
+            <Box mt="7rem" border="2px solid black">
+               <Text> SHIPPING ADDRESS</Text>
+               <Box>
+                 <Text>{"USER_NAME"}</Text>
+                 <Text>{"uSER_Address"}</Text>
+                 <Text>{"USER_COUNTRY"}</Text>
+                 <Text>{"USER_PHONE_nUMBER"}</Text>
+
+                  <Text>Shipping - Standard $6.99</Text>
+               </Box>
             </Box>
           </div>
         </div>
