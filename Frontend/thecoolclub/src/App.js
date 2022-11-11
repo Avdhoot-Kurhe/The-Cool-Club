@@ -1,6 +1,8 @@
 import AllRoutes from './Routes/AllRoutes';
 import './App.css';
+import Login from './components/pankajsingh/Login/Login';
 import BillingPage from './components/pankajsingh/Shipping/BillingPage';
+import SignUp from './components/pankajsingh/SignUp/SignUp';
 
 function App() {
   return (
@@ -8,7 +10,9 @@ function App() {
       <AllRoutes/>
       {/* <Bodycarepage /> */}
      {/* <ShippingPage /> */}
-     <BillingPage />
+     {/* <BillingPage /> */}
+     <Login />
+     {/* <SignUp /> */}
     </div>
   );
 }
