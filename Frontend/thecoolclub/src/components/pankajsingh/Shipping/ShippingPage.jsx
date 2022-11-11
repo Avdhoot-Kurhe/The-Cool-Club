@@ -344,6 +344,7 @@ const ShippingPage = () => {
                 </Box>
 
             </div>
+          
           </div>
           <div className="shipping_page_left_main">
             <Box>
