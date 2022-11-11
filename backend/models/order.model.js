@@ -11,7 +11,7 @@ const orderSchema= new mongoose.Schema({
     price:{type:Number, required:true},
     productImageurl:{type:String, required:true},
     productTitle:{type:String, required:true},
-    invoice:{type:String, required:true},
+    invoice:{type:String, },
 },{timestamps:true});
 
 const OrderModel=mongoose.model('order',orderSchema);

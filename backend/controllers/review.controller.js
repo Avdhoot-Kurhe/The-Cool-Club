@@ -1,4 +1,3 @@
-const { OrderModel } = require("../models/order.model");
 const { ReviewModel } = require("../models/review.model");
 
 const getReviews = async (req, res) => {
@@ -12,18 +11,18 @@ const getReviews = async (req, res) => {
 };
 const addReviews = async (req, res) => {
   let review = req.body;
-  let product = await OrderModel.find({
-    $and: {
-      uid: review.uid,
-      productid: review.productid,
-      deliveryStatus: "delivered",
-    },
-  });
   try {
-    if (product) {
+    // let product = await OrderModel.find({
+    //   $and: {
+    //     uid: review.uid,
+    //     productid: review.productid,
+    //     deliveryStatus: "delivered",
+    //   },
+    // });
+    // if (product) {
       let addreview = await new ReviewModel.insertMany({ review });
       res.send(addreview);
-    }
+    // }
   } catch (err) {
     res.send({ msg: "Something went wrong while adding reviews" });
   }
