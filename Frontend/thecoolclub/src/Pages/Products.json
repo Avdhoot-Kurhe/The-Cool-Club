@@ -1,0 +1,104 @@
+{
+    "products" : [
+        {
+            "id" : 1,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4b491d20/crop/026535136_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New Fragrance",
+            "name": "Dream Bright",
+            "category":"Spray",
+            "price" :"$17.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 2,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw0580616f/crop/026551380_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New Fragrance",
+            "name": "After Dark",
+            "category":"Body Wash",
+            "price" :"$14.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 3,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8ab78bd7/crop/026539029_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Vanilla Bean Noel",
+            "category":"Body Cream",
+            "price" :"$16.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 4,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb39e72d8/crop/026567998_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Eucalyptus Lavender",
+            "category":"Body Wash",
+            "price" :"$15.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 5,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4bbac15d/crop/026557579_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Snowflakes & Cashmere",
+            "category":"Spray",
+            "price" :"$16.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 6,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw7a23c1cb/crop/026557573_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Frosted Coconut Snowball",
+            "category":"Body Lotion",
+            "price" :"$14.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 7,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw67bdae98/crop/026398463_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Black Tie",
+            "category":"Spray",
+            "price" :"$14.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 8,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5baf2a80/crop/026539030_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Winter Candy Apple",
+            "category":"Body Cream",
+            "price" :"$16.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 9,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw9285085c/crop/026557566_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Winterberry Wonder",
+            "category":"Body Cream",
+            "price" :"$13.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 10,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6c3d8902/crop/026553500_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "Online Exclusive",
+            "name": "Classic Flannel",
+            "category":"Body Wash",
+            "price" :"$14.50" ,
+            "addtobag": "ADD TO BAG"
+        },
+        {
+            "id" : 11,
+            "image":"https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw317a404a/crop/026565998_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
+            "ad": "New!",
+            "name": "Bright Christmas Morning",
+            "category":"Body Cream",
+            "price" :"$16.50" ,
+            "addtobag": "ADD TO BAG"
+        }
+       
+                ]
+}
