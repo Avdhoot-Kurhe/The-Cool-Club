@@ -10,8 +10,8 @@ import {
     MenuOptionGroup,
     MenuDivider,
   } from '@chakra-ui/react';
-  import { ChevronDownIcon } from '@chakra-ui/icons';
-  import { Button, ButtonGroup } from '@chakra-ui/react';
+  import {ChevronDownIcon} from '@chakra-ui/icons';
+  import {Button, ButtonGroup} from '@chakra-ui/react';
 
 const Bodycarepage = () => {
   return (
