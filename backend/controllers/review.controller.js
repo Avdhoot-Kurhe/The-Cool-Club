@@ -1,9 +1,9 @@
 const { ReviewModel } = require("../models/review.model");
 
 const getReviews = async (req, res) => {
-  const { productid } = req.body;
+  const { productid } = req.params;
   try {
-    let reviews = await ReviewModel.find({ productid });
+    let reviews = await ReviewModel.find({ productid:productid });
     res.send(reviews);
   } catch (err) {
     res.send({ msg: "Something went wrong while fetching reviews" });
@@ -12,17 +12,10 @@ const getReviews = async (req, res) => {
 const addReviews = async (req, res) => {
   let review = req.body;
   try {
-    // let product = await OrderModel.find({
-    //   $and: {
-    //     uid: review.uid,
-    //     productid: review.productid,
-    //     deliveryStatus: "delivered",
-    //   },
-    // });
-    // if (product) {
-      let addreview = await  ReviewModel.insertMany({ review });
+    
+      let addreview = await ReviewModel.insertMany([{...review}] );
       res.send(addreview);
-    // }
+    
   } catch (err) {
     res.send({ msg: "Something went wrong while adding reviews" });
   }
@@ -32,7 +25,7 @@ const updateReviews = async (req, res) => {
   let review = req.body;
   try {
     let updatestatus = await ReviewModel.updateOne(
-      { $and: { uid: review.uid, _id: id } },
+      { $and: [{ uid: review.uid},{ _id: id }] },
       { ...review }
     );
     res.send(updatestatus);
@@ -45,7 +38,7 @@ const deleteReviews = async (req, res) => {
   let review = req.body;
   try {
     let deletestatus = await ReviewModel.updateOne({
-      $and: { uid: review.uid, _id: id },
+      $and: [{ uid: review.uid},{ _id: id }],
     });
     res.send(deletestatus);
   } catch (err) {
