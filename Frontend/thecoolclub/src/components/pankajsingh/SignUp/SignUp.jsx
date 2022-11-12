@@ -1,24 +1,31 @@
-
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import "../Login/Login.css";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { signUp } from "../../../Redux/Auth/action";
 import './Singup.css'
 
 const SignUp = () => {
     const [userData, setUserData] = useState({});
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleOnchange = (e) => {
         const {name , value} = e.target
         setUserData({
             ...userData,
-            [name] : value
+            [name] : value,
+            role : "user"
         })
     }
   
     const handleOnSubmit = (e) => {
         e.preventDefault();
         console.log(userData);
+       dispatch(signUp(userData)).then((res) => {
+         navigate('/login')
+       })  
     }
   return (
     <div className="LoginPage_mainDiv">
@@ -36,14 +43,6 @@ const SignUp = () => {
         <p > Create an Account </p>
       </div>
       <hr />
-
-      {/* firstname:{type:String, required:true},
-    lastname:{type:String, required:true},
-    email:{type:String, required:true},
-    password:{type:String, required:true},
-    postalcode:{type:Number, required:true},
-    phone:{type:Number, required:true},
-    role:{type:String, required:true} */}
       <div className="sign_up_main_Div">
             <form onSubmit={handleOnSubmit}>
                 <div className="firstName_samllDiv">
@@ -81,8 +80,8 @@ const SignUp = () => {
                     <input type="password" name="password" onChange={handleOnchange}/>
                 </div>
 
-                <div className="marginDiv">
-                    <p className="center">Privacy Policy</p>
+                <div className="marginDiv btnCalss" style={{marginTop :"2.5%"}}>
+                    <p className="center" style={{marginBottom :"5%"}}>Privacy Policy</p>
                     <button type="submit" className="createAccount_btn"> CREATE ACCOUNT</button>
                 </div>
             </form>
