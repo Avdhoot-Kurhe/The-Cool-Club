@@ -1,5 +1,5 @@
-import { loadData, saveData } from "../../utils/localStorage";
-import { GET_LOGIN_FAILURE, GET_LOGIN_REQUEST, GET_LOGIN_SUCCESS } from "./actionType";
+import { POST_LOGIN_FAILURE, POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS } from "./actonTypes";
+
 
     const initialState = {
         isAuth : localStorage.getItem("isAuth")|| false,
@@ -10,12 +10,12 @@ import { GET_LOGIN_FAILURE, GET_LOGIN_REQUEST, GET_LOGIN_SUCCESS } from "./actio
 
  const reducer = (state= initialState , { type, payload}) => {
      switch(type) {
-         case GET_LOGIN_REQUEST :
+         case POST_LOGIN_REQUEST:
              return {
                 ...state,
                 isLoading : true,
              }
-        case GET_LOGIN_SUCCESS :
+        case POST_LOGIN_SUCCESS :
             let newAuth = true;
             localStorage.setItem("isAuth", newAuth)
             localStorage.setItem("token",payload)
@@ -26,7 +26,7 @@ import { GET_LOGIN_FAILURE, GET_LOGIN_REQUEST, GET_LOGIN_SUCCESS } from "./actio
                 isLoading : false,
                 token : payload
             }
-        case GET_LOGIN_FAILURE :
+        case POST_LOGIN_FAILURE :
             return {
                 ...state,
                 isAuth : false,
