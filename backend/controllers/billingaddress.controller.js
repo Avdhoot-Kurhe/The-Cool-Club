@@ -1,4 +1,4 @@
-const { BillingaddressModel } = require("../models/billingAddress.model");
+const { BillingaddressModel } = require("../models/billingaddress.model");
 
 const getBillingAddresses = async (req, res) => {
   try {
