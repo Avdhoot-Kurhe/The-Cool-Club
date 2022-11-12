@@ -1,4 +1,4 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, Search2Icon } from "@chakra-ui/icons";
 import {
   Box,
   Text,
@@ -23,10 +23,13 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
+  InputGroup,
+  InputRightElement,
 } from "@chakra-ui/react";
 import React from "react";
 import Logo from "../../../Assets/the_cool_club_logo.png";
 import { BsBasket3 } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const buttonDetails = [
   {
@@ -98,6 +101,7 @@ const accordians = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
@@ -123,20 +127,35 @@ const Navbar = () => {
         <HStack p="20px">
           <HStack w="100%">
             <Spacer />
-            <Center position="absolute" height="30px" w="90%">
-              <Image h="250px" src={Logo} />
-            </Center>
-            <HStack h="40px" w="25%" pr="50px">
-              <Input
-                borderRadius="none"
-                placeholder="Search by fragrance or product.."
+            <Center position="absolute" height="30px" zIndex="111" w="90%">
+              <Image
+                h="60px"
+                cursor="pointer"
+                onClick={() => {
+                  navigate("/home");
+                }}
+                src={Logo}
               />
+            </Center>
+            <HStack h="40px" w="40%" zIndex="1000" gap="20px" pr="50px">
+              <InputGroup>
+                <Input
+                  // right={}
+                  borderRadius="none"
+                  placeholder="Search by fragrance or product"
+                />
+                <InputRightElement
+                  children={<Search2Icon color="blue.500" />}
+                />
+              </InputGroup>
               <Image
                 h="40px"
+                cursor="pointer"
                 src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw8f5c8e40/images/svg-icons/UI-MyAccount.svg?yocs=o_s_"
               />
               <Image
                 h="30px"
+                cursor="pointer"
                 src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1667990775125/images/svg-icons/UI-AddToBag-v2.svg?yocs=o_s_"
               />
             </HStack>
@@ -183,7 +202,7 @@ const Navbar = () => {
         </HStack>
       </Box>
       <Center>
-        <Text
+        {/* <Text
           display={{ base: "none", md: "block" }}
           p="10px 0"
           w="80%"
@@ -191,7 +210,7 @@ const Navbar = () => {
           color="white"
         >
           <Center fontWeight="bold">LIMITED TIME ONLY!</Center>
-        </Text>
+        </Text> */}
       </Center>
 
       <>
