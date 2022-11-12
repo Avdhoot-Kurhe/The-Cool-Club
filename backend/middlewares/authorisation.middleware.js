@@ -10,7 +10,7 @@ const authorisation = (authorisiedroles) => {
         console.log(user);
         let role=user.role;
         console.log(role)
-        if (authorisiedroles.includes(role)==="admin") {
+        if (authorisiedroles.includes(role)) {
           next();
         } else {
           res.send({'msg':"Access Denied"});
