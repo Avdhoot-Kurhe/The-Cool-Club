@@ -1,32 +1,27 @@
 const { UserModel } = require("../models/user.model");
-const jwt=require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
-const authorisation=(authorisiedrole)=>{
+const authorisation = (authorisiedroles) => {
+  return async (req, res, next) => {
+    let uid=req?.body?.uid;
 
-  return  async (req, res,next) => {
-    const token=req.headers.authorization.split(' ')[1];
-    if(!token) {
-        res.send("Please Login");
-    }else{
-        const decode=jwt.verify(token,process.env.KEY);
-        console.log(decode);
-        if(decode){
-            const user=await UserModel.findOne({_id: decode.uid})
-            console.log(user)
-            if(user.role==="admin") next()
-            else{
-            res.send("Access Denied");
+    try{
+        const user = await UserModel.findOne({ _id:uid });
+        console.log(user);
+        let role=user.role;
+        console.log(role)
+        if (authorisiedroles.includes(role)==="admin") {
+          next();
+        } else {
+          res.send({'msg':"Access Denied"});
         }
-        }else{
-            res.send("Access Denied");
-        }
+      } catch(err) {
+        res.send({'msg':"Access Denied, Please try again later",err});
+      }
     }
-}
-
-}
+  };
 
 
-
-module.exports ={
-    authorisation,
-}
+module.exports = {
+  authorisation,
+};

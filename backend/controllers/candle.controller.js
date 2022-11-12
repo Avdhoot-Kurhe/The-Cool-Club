@@ -1,8 +1,8 @@
-const { ProductModel } = require("../models/product.model");
+const { CandleModel } = require("../models/candle.product.model");
 
 const getProduct = async (req, res) => {
   try {
-    let products =await ProductModel.find({});
+    let products =await CandleModel.find({});
     res.send(products);
   } catch (err) {
     res.send({ msg: "Something went wrong while fetching products", error: err });
@@ -13,7 +13,7 @@ const addProduct = async (req, res) => {
   newProduct.adminid=req.body.uid;
   console.log(newProduct);
   try {
-    let product = await ProductModel.insertMany([{...newProduct}]);
+    let product = await CandleModel.insertMany([{...newProduct}]);
     res.send({ msg: "Product added successfully", NewProduct: product });
   } catch (err) {
     res.send({ msg: "Something went wrong while adding product", error: err });
@@ -23,7 +23,7 @@ const updateProduct = async (req, res) => {
   let { id } = req.params;
   try {
     let update = req.body;
-    let updatedstatus = await ProductModel.updateOne(
+    let updatedstatus = await CandleModel.updateOne(
       { _id: id },
       { ...update }
     );
@@ -35,7 +35,7 @@ const updateProduct = async (req, res) => {
 const getSingleProduct = async (req, res) => {
   let { id } = req.params;
   try {
-    let product = await ProductModel.find({ _id: id });
+    let product = await CandleModel.find({ _id: id });
     res.send({ msg: "Product updated successfully", product });
   } catch (err) {
     res.send({ msg: "Something went wrong", error: err });
@@ -44,7 +44,7 @@ const getSingleProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
   let { id } = req.params;
   try {
-    let deletestatus = await ProductModel.deleteOne({ _id: id });
+    let deletestatus = await CandleModel.deleteOne({ _id: id });
     res.send({ msg: "Product deleted successfully", deletestatus });
   } catch (err) {
     res.send({ msg: "Something went wrong", error: err });
@@ -54,8 +54,8 @@ const deleteProduct = async (req, res) => {
 const searchProduct = async (req, res) => {
   let { q } = req.query;
   try {
-  // ProductModel.createIndexes({ title: "text" });
-    let products = await ProductModel.find({ $search: { title: q } });
+  // CandleModel.createIndexes({ title: "text" });
+    let products = await CandleModel.find({ $search: { title: q } });
     console.log(q);
     res.send(products);
   } catch (err) {
@@ -63,7 +63,7 @@ const searchProduct = async (req, res) => {
   }
 };
 
-const ProductController = {
+const CandleController = {
   getProduct,
   getSingleProduct,
   searchProduct,
@@ -72,5 +72,5 @@ const ProductController = {
   deleteProduct,
 };
 module.exports = {
-  ProductController,
+  CandleController,
 };

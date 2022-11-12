@@ -9,9 +9,9 @@ const reviewRouter=Router();
 reviewRouter.get('/:productid',authentication,authorisation(['user','admin']),ReviewController.getReviews)
 reviewRouter.get('/:productid',authentication,authorisation(['user','admin']),ReviewController.noOfReviews)
 reviewRouter.get('/:productid',authentication,authorisation(['user','admin']),ReviewController.noOfStars)
-reviewRouter.post('/create',authentication,authorisation(['user']),ReviewController.getReviews)
-reviewRouter.put('/:id',authentication,authorisation(['user']),ReviewController.getReviews)
-reviewRouter.delete('/:id',authentication,authorisation(['user']),ReviewController.getReviews)
+reviewRouter.post('/create',authentication,authorisation(['user','admin']),ReviewController.addReviews)
+reviewRouter.put('/:id',authentication,authorisation(['user','admin']),ReviewController.updateReviews)
+reviewRouter.delete('/:id',authentication,authorisation(['user','admin']),ReviewController.deleteReviews)
 
 
 

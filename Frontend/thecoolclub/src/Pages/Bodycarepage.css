@@ -188,6 +188,7 @@
     width: 19%;
     margin: 1% 1% 1% 1%;
     /* border: 1px solid green; */
+
 }
 
 .bodycarepagerighttopdivin:hover{
@@ -199,6 +200,7 @@
     height: 80%;
     width: 100%;
     /* border: 1px solid red; */
+
 }
 
 .bodycarepagerighttopdivinimgin{
@@ -208,6 +210,7 @@
 
 .bodycarepagerighttopdivinname{
     /* border: 1px solid black; */
+
     height: 18%;
     width: 98%;
     margin: 0.5% 0.5% 0.5% 0.5%;
@@ -217,6 +220,7 @@
     font-weight: 500;
     margin-bottom: 5px;
     font-size: 14px;
+
 }
 
 .homelocate{
@@ -232,7 +236,8 @@
 }
 
 .topoffers{
-    border: 1px solid black;
+
+    /* border: 1px solid black; */
     height: 1.5%;
     margin-top: 1%;
     margin-left: 1%;
@@ -277,6 +282,9 @@
 
 /* .filterdiv{
     border: 1px solid gray;
+
+.filterdiv{
+    border: 1px solid green;
     height: 90%;
     width: 75%;
     background-color: rgb(242,242,242);
@@ -284,6 +292,9 @@
 } */
 
      .filterdivpara{
+}
+
+.filterdivpara{
     font-size: 16px;
     font-weight: 700;
     text-align: left;
@@ -292,6 +303,9 @@
     border: 1px solid red;
 }
 /*
+    /* border: 1px solid red; */
+}
+
 .filterdivproducttype{
     border: 1px solid green;
     height: 95%;
@@ -318,7 +332,7 @@
     width: 100%;
     margin-left: 2%;
     margin-top: 4%;
-/*     
+    
 }
 
 .sortdivpara{
@@ -329,7 +343,7 @@
     font-weight: 500;
     height: 30px;
     border: 1px solid red;
-} */ */
+} */ 
 
 .filtersortdiv{
     border: 1px solid blue;
