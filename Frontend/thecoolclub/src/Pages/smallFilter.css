@@ -1,0 +1,43 @@
+.filter_sort_contaier{
+    display: flex;
+    /* border: 1px solid blue; */
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.filter_div{
+    /* border: 1px solid black; */
+    margin-top: 1rem;
+    padding: 0.7rem;
+    background-color: rgb(242,242,242);
+    height: 50px;
+}
+.filter_by{
+    /* padding-top: 1rem; */
+    /* width: 90%; */
+}
+.select_tag{
+    margin-left: 5rem;
+    border-bottom: 4px solid black;
+}
+.filter_select{
+    /* width: 100%; */
+    background-color: rgb(242,242,242); 
+}
+
+.sort_div{
+    /* width: 200px; */
+    margin-top: 1.5rem;
+    margin-left: 15%;
+
+}
+.sort_select{
+    border-bottom: 4px solid black;
+}
+
+
+.topOfferss_div{
+    font-size: 0.95rem;
+    /* font-weight: 300; */
+    color: rgba(136, 134, 134, 0.8);
+    margin-top: 1.3rem;
+}

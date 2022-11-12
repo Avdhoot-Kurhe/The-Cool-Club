@@ -1,16 +1,57 @@
 
 .BodyCare_main_Div{
+    margin-top: 2rem;
     display: flex;
 }
 .BodyCare_main_Div_leftSide{
-    width: 10%;
+    margin-left: 3%;
+    width: 15%;
 }
 .BodyCare_main_Div_RightSide{
-    width: 90%;
+    /* border: 1px solid red; */
+    margin-left: 7%;
+}
+.BodyCare_main_Div_RightSide_mapDiv{
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    gap:1.2rem;
+    /* border:1px solid black */
 }
 
 .BodyCare_main_Div_AllProducts{
     text-align: center;
+    /* border: 1px solid black; */
+}
+
+.title_Div{
+    color: black;
+    font-weight: 550;
+    font-size: 0.95rem;
+}
+.substitle_Div{
+    font-size: 0.75rem;
+}
+.price_Div{
+    margin-top: 0.6rem;
+    color: black;
+    font-weight: 550;
+    font-size: 1.1rem;   
+}
+.mixmatch_Div{
+    padding-top: 0.3rem;
+    width: 170px;
+    margin: auto;
+    font-size: 0.7rem;
+    color: red;
+}
+.addToBag_button_main_Div{
+    width: 90%;
+    margin: auto;
+    margin-top: 0.5rem;
+    color: white;
+    background-color: black;
+    padding-top: 0.5rem;
+    height: 40px;
+    font-size: 0.8rem;
 }
