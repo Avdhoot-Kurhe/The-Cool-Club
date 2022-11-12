@@ -1,10 +1,16 @@
-import { Box } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../../Redux/Auth/action";
 import "./Login.css";
 
 const Login = () => {
  const [data, setData] = useState({});
+ const dispatch = useDispatch();
+ const navigate = useNavigate();
+
+
   const handleOnChange = (e) => {
     const { name ,value} = e.target;
     setData({...data, [name] : value})
@@ -13,6 +19,9 @@ const Login = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     console.log(data);
+    dispatch(login(data)).then((res) => {
+      return navigate("/home")
+    })
   }
   return (
     <div className="LoginPage_mainDiv">
@@ -29,7 +38,7 @@ const Login = () => {
       <div className="singIn_text ">
         <p >Sign In or Sign Up</p>
       </div>
-      <hr />
+      <hr className="lineBreak_Div"/>
 
       <div className="signin_up_main_Div">
         <div className="signin_Div">
@@ -51,14 +60,14 @@ const Login = () => {
                 <p className="center">Remenber me</p>
               </div>
             </div>
-            <p className="center">Privacy Policy</p>
+            <p className="center" style={{marginTop:"1rem", marginRight:'15%'}}>Privacy Policy</p>
             <input type="submit" value="SIGN IN" className="btn" />
           </form>
         </div>
 
         <div className="middle_or_Div">
-         <p > <hr className="small_hr"/> </p>
-         <p style={{border:'1px solid black',borderRadius:'50%',padding :'0.5rem', marginTop:'-1rem'}}>OR</p>
+         <p > <hr className="small_hr" /> </p>
+         <p style={{border:'1px solid black',borderRadius:'50%',padding :'0.5rem'}}>OR</p>
          <p> <hr className="long_hr"/> </p>
         </div>
 

@@ -32,15 +32,19 @@ hr{
 
 .signin_up_main_Div{
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 1.7rem;
     display: flex;
     justify-content: center;
 }
 .signin_Div{
+    /* margin-top: 2%; */
     margin-right: 6%;
     margin-left: 6%;
 }
-
+.middle_or_Div{
+    /* border: 1px solid red; */
+    margin-right: 4rem;
+}
 .sing_Div_image{
     width: 80%;
 }
@@ -49,16 +53,28 @@ hr{
 }
 .center{
  font-size: 13px;
+ text-align: center;
 }
 .fontsize{
     font-size: 15px;
+    margin-bottom: 1.3rem;
+}
+.lineBreak_Div{
+    width: 65%;
+    margin: auto;
+    margin-top: 0.15rem;
+    border-bottom: 1px solid black;
 }
 .small_hr{
-    width: 1%;
+    width: 2%;
+    border-left: 1px solid black;
+    margin: auto;
     height: 5vh;
 }
 .long_hr{
     width: 1%;
+    border-left: 1px solid black;
+    margin: auto;
     height: 50vh;
 }
 .emailAddress_tag{
@@ -85,12 +101,18 @@ hr{
     background-color: rgb(15, 15, 15, 0.9);
     color: white;
     /* padding-left: 1rem; */
-    width: 45%;
+    width: 50%;
+    margin-left: 2.5rem;
+    margin-top: 1rem;
     height: 2.2rem;
     cursor: pointer;
 
 }
 .question_div{
-    width: 90%;
-    margin-bottom: 10%;
+    width: 23%;
+    text-align: center;
+    margin: auto;
+    margin-top: 2.5%;
+    /* margin-bottom: 10%; */
+    padding-right: 1rem;
 }

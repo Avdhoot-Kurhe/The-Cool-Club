@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { GET_LOGIN_FAILURE, GET_LOGIN_SUCCESS } from './actionType';
-import { POST_SIGNUP_FAILURE, POST_SIGNUP_REQUEST, POST_SIGNUP_SUCCESS } from './actonTypes';
+import { POST_LOGIN_FAILURE, POST_LOGIN_REQUEST, POST_SIGNUP_FAILURE, POST_SIGNUP_REQUEST, POST_SIGNUP_SUCCESS } from './actonTypes';
 
  
-const SignUp = (payload) => (dispatch) => {
+const signUp = (payload) => (dispatch) => {
     dispatch({ type : POST_SIGNUP_REQUEST})
-    return axios.post("url",payload)
+    return axios.post("https://thecoolclub.onrender.com/user/signup",payload)
     .then((res) => {
+        console.log(res.data)
         return dispatch({ type : POST_SIGNUP_SUCCESS , payload : res.data})
     })
     .catch((err) => {
@@ -16,15 +16,16 @@ const SignUp = (payload) => (dispatch) => {
 
 
  const login = (payload) => (dispatch) => {
-     dispatch({ type : GET_MUSIC_RECORD_REQUEST});
-     return axios.post("url",payload,{
+     dispatch({ type : POST_LOGIN_REQUEST});
+     return axios.post("https://thecoolclub.onrender.com/user/login",payload,{
         headers: {
           'token': `Bears ${localStorage.getItem("token")}`
         }})
      .then((res) => {
-         return dispatch({ type : GET_LOGIN_SUCCESS , payload : res.data})
+        alert("login successfull")
+         return dispatch({ type : POST_SIGNUP_SUCCESS , payload : res.data})
      })
-     .catch((e) => dispatch({ type : GET_LOGIN_FAILURE }))
+     .catch((e) => dispatch({ type : POST_LOGIN_FAILURE }))
  }
 
- export { login, SignUp }
+ export { login, signUp }
