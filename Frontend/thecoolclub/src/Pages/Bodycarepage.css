@@ -38,12 +38,13 @@
     border-bottom: 1px solid black;
 }
 
-.filtersortdiv{
+/* .filtersortdiv{
     border: 1px solid black;
     height: 3%;
     width: 100%;
     margin-top: 1%;
-}
+    display: flex;
+} */
 
 .bodycareproductsdiv{
     border: 1px solid green;
@@ -54,15 +55,21 @@
 
 .bodycareproducts1{
     border: 1px solid black;
-    height: 30%;
-    display: flex;
+    height: 100%;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(4,24%); 
+    grid-template-rows: repeat(3,30%);
 }
 
 .bodycareproductsinside{
-    border: 1px solid blue;
-    height: 95%;
-    width: 23%;
-    margin: 0.75% 0.75% 0.75% 0.75%;
+    /* border: 1px solid blue; */
+    /* height: 95%;
+    width: 23%; */
+    margin: 5% 5% 5% 5%; 
+    /* display: grid; */
+    /* grid-template-columns: 23% 23% 23% 23%;  */
+    /* grid-template-rows: 30%; */
 }
 
 .bodycareproductsinsideimg{
@@ -75,7 +82,7 @@
 .bodycareproductsinsidead{
     /* border: 1px solid black; */
     height: 4%;
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 0.5%;
 }
@@ -83,7 +90,7 @@
 .bodycareproductsinsidename{
     /* border: 1px solid blue; */
     height: 5%;
-    width: 80%;
+    width: 95%;
     margin: auto;
     margin-top: 0.5%;
 }
@@ -91,7 +98,7 @@
 .bodycareproductsinsidetype{
     /* border: 1px solid black; */
     height: 3%;
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 0.5%;
 }
@@ -152,8 +159,9 @@
 
 .bodycareproductsinsidenamepara{
     height: 80%;
-    width: 90%;
+    width: 95%;
     margin: auto;
+    font-size: 14px;
     font-weight: 700;
     color: rgb(51,51,51);
 }
@@ -179,7 +187,8 @@
     height: 92%;
     width: 19%;
     margin: 1% 1% 1% 1%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
+
 }
 
 .bodycarepagerighttopdivin:hover{
@@ -190,7 +199,8 @@
 .bodycarepagerighttopdivinimg{
     height: 80%;
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+
 }
 
 .bodycarepagerighttopdivinimgin{
@@ -199,7 +209,8 @@
 }
 
 .bodycarepagerighttopdivinname{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+
     height: 18%;
     width: 98%;
     margin: 0.5% 0.5% 0.5% 0.5%;
@@ -208,6 +219,8 @@
 .bodycarepagerighttopdivinnamein{
     font-weight: 500;
     margin-bottom: 5px;
+    font-size: 14px;
+
 }
 
 .homelocate{
@@ -223,6 +236,7 @@
 }
 
 .topoffers{
+
     /* border: 1px solid black; */
     height: 1.5%;
     margin-top: 1%;
@@ -266,12 +280,18 @@
     color: rgb(92, 92, 243);
 }
 
+/* .filterdiv{
+    border: 1px solid gray;
+
 .filterdiv{
     border: 1px solid green;
     height: 90%;
     width: 75%;
     background-color: rgb(242,242,242);
     display: flex;
+} */
+
+     .filterdivpara{
 }
 
 .filterdivpara{
@@ -280,6 +300,9 @@
     text-align: left;
     width: 80px;
     height: 30px;
+    border: 1px solid red;
+}
+/*
     /* border: 1px solid red; */
 }
 
@@ -295,3 +318,58 @@
     margin-top: 15px;
 }
 
+.sortbydiv{
+    border: 1px solid green;
+    height: 95%;
+    width: 25%;
+    margin-left: 2%;
+    display: flex;
+}
+
+.sortdivproducttype{
+    border: 1px solid green;
+    height: 70%;
+    width: 100%;
+    margin-left: 2%;
+    margin-top: 4%;
+    
+}
+
+.sortdivpara{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    width: 80px;
+    font-weight: 500;
+    height: 30px;
+    border: 1px solid red;
+} */ 
+
+.filtersortdiv{
+    border: 1px solid blue;
+    height: 80%;
+    margin-top: 1%;
+}
+
+.filterdiv{
+    border: 1px solid green;
+    height: 7%;
+    margin-left: 1%;
+}
+
+.filterdivin{
+    border: 1px solid black;
+    height: 40px;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.filterdivall{
+    border: 1px solid green;
+    height: 200px;
+}
+
+.filterpara{
+    font-size: 14px;
+    font-weight: 500;
+}
