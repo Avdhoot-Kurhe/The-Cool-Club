@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getProductsData } from "../Redux/AppReducer/action";
 import BodyCareFilter from './BodyCareFilter';
+import BodySmallFilter from './BodySmallFilter';
 
 const Bodycarepage = () => {
 
@@ -74,22 +75,30 @@ const Bodycarepage = () => {
           <BodyCareFilter />
         </div>
         <div className='BodyCare_main_Div_RightSide'>
+          <div >
+              <h3 style={{fontSize:"1.5rem", fontWeight:'bold'}}>All Body Care</h3>
+              <p style={{border:'1px solid black', backGround:"black"}}></p>
+              <BodySmallFilter />
+          </div>
+          <div className='BodyCare_main_Div_RightSide_mapDiv'>
           {
             product?.map((item) => {
               return (
                 <div className='BodyCare_main_Div_AllProducts'>
                    <img src={item.productimageurl} alt={item.title} />
-                   <p>{item.title}</p>
-                   <p>{item.subtitle}</p>
-                   <p>{item.price}</p>
-                   <p>{item.mixmatch}</p>
-                   <div>
-                     <button>Add to Bag</button>
+                   <p className='title_Div'>{item.title}</p>
+                   <p className='substitle_Div'>{item.subtitle}</p>
+                   <p className='price_Div'>{"$"}{item.price}</p>
+                   <p className='mixmatch_Div'>{item.mixnmatch}</p>
+                   <div className='addToBag_button_main_Div'>
+                     <button>ADD TO BAG</button>
                    </div>
                 </div>
               )
             })
           }
+          </div>
+          
         </div>
       </div>
     </div>                             
