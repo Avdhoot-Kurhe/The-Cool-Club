@@ -1,4 +1,4 @@
-const { PaymentmethodModel } = require("../models/paymentMethod.model");
+const { PaymentmethodModel } = require("../models/paymentmethod.model");
 
 const getPaymentMethod = async (req, res) => {
   let { uid } = req.body;

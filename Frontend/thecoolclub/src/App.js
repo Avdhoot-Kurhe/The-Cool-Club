@@ -8,9 +8,7 @@ import AllRoutes from './Routes/AllRoutes';
 
 function App() {
   return (
-    <div >
-       
-      <Link to='/cart' ><Text>Cart</Text></Link>
+    <div className="App">  
       <AllRoutes/>
         </div>
   );

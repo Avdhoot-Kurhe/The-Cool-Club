@@ -4,6 +4,7 @@
   text-align: left;
 }
 .firstName_samllDiv input {
+    border: 1px solid black;
     width: 95%;
     height: 30px;
 }
@@ -16,15 +17,140 @@
 
 
 .createAccount_btn{
-    width: 14%;
+    width: 90%;
     background-color: black;
     color: white;
     height: 40px;
     cursor: pointer;
+}
+.btnCalss{
+    width: 20%;
+    margin: auto;
 }
 .question_div_width{
     width: 23%;
     margin: auto;
     margin-top: 3%;
     margin-bottom: 7%;
+}
+
+
+
+*{
+    font-family: Trade Gothic W01 Light, Arial, sans-serif; 
+}
+.LoginPage_topLeft {
+    display: flex;
+    margin-top: 0.5rem;
+    margin-left: 4.7rem;
+    font-size: 0.75rem;
+}
+
+.LoginPage_singImg {
+    margin:1rem 0rem 3rem 0rem;
+    display: flex;
+    justify-content: center;
+}
+.LoginPage_singImg img{
+    width: 64%;
+}
+
+hr{
+    width: 64%;
+    margin-top: -0.7rem;
+}
+
+.singIn_text{
+    width: 49%;
+    font-size: 1.5rem;
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.signin_up_main_Div{
+    width: 100%;
+    margin-top: 1.7rem;
+    display: flex;
+    justify-content: center;
+}
+.signin_Div{
+    /* margin-top: 2%; */
+    margin-right: 6%;
+    margin-left: 6%;
+}
+.middle_or_Div{
+    /* border: 1px solid red; */
+    margin-right: 4rem;
+}
+.sing_Div_image{
+    width: 80%;
+}
+.sign_Div{
+    margin-left: -2rem;
+}
+.center{
+ font-size: 13px;
+ text-align: center;
+}
+.fontsize{
+    font-size: 15px;
+    margin-bottom: 1.3rem;
+}
+.lineBreak_Div{
+    width: 65%;
+    margin: auto;
+    margin-top: 0.15rem;
+    border-bottom: 1px solid black;
+}
+.small_hr{
+    width: 2%;
+    border-left: 1px solid black;
+    margin: auto;
+    height: 5vh;
+}
+.long_hr{
+    width: 1%;
+    border-left: 1px solid black;
+    margin: auto;
+    height: 50vh;
+}
+.emailAddress_tag{
+    margin-top: 2rem;
+    text-align: left;
+    font-size: 15px;
+}
+
+.emailAddress_input{
+    text-align: left;
+    width: 90%;
+    height: 30px;
+    margin-right: 10%;
+}
+.signin_forgetPassword_div{
+    margin-top: 1rem;
+    display: flex;
+}
+.marginRember{
+    margin-left: 20%;
+}
+.btn{
+    border: 1px rgb(15, 15, 15, 0.9) solid;
+    background-color: rgb(15, 15, 15, 0.9);
+    color: white;
+    /* padding-left: 1rem; */
+    width: 50%;
+    margin-left: 2.5rem;
+    margin-top: 1rem;
+    height: 2.2rem;
+    cursor: pointer;
+
+}
+.question_div{
+    width: 23%;
+    text-align: center;
+    margin: auto;
+    margin-top: 2.5%;
+    /* margin-bottom: 10%; */
+    padding-right: 1rem;
 }

@@ -1,4 +1,4 @@
-const { DeliveryAddressModel } = require("../models/deliveryAddress.model");
+const { DeliveryAddressModel } = require("../models/deliveryaddress.model");
 
 const getDeliveryAddresses = async (req, res) => {
   try {
