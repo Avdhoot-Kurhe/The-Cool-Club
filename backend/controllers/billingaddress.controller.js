@@ -1,4 +1,4 @@
-const {  BillingaddressModel } = require("../models/BillingAddress.model");
+const { BillingaddressModel } = require("../models/billingaddress.model");
 
 const getBillingAddresses = async (req, res) => {
   try {
@@ -13,8 +13,8 @@ const getBillingAddresses = async (req, res) => {
 const addBillingAddress = async (req, res) => {
   let newaddress = req.body;
   try {
-    let product = await  BillingaddressModel.insertMany([newaddress]);
-    res.send({ msg: "Address added successfully", newaddress: product });
+    let address = await  BillingaddressModel.insertMany([newaddress]);
+    res.send({ msg: "Address added successfully", newaddress: address });
   } catch (err) {
     res.send({
       msg: "Something went wrong while adding data to BillingAddress",

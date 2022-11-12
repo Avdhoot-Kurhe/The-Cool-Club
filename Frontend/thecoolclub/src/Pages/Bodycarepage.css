@@ -1,297 +1,57 @@
-.bodycarepage{
-    border: 1px solid red;
-    height: 2000px;
-    
-}
 
-.bodycarepagedispl{
+.BodyCare_main_Div{
+    margin-top: 2rem;
     display: flex;
 }
-
-.bodycarepageright{
-    border: 1px solid blue;
-    height: 2000px;
-    width: 70%;
-    margin-left: 2%;
+.BodyCare_main_Div_leftSide{
+    margin-left: 3%;
+    width: 15%;
 }
-
-.bodycarepageleft{
-    border: 1px solid blue;
-    height: 2000px;
-    width: 28%;
-}
-
-.bodycarepagerighttopdiv{
-    border: 1px solid black;
-    height: 11%;
-    width: 98%;
-    margin-top: 1%;
-    display: flex;
-}
-
-.allbodycare{
-    border: 1px solid red;
-    height: 4%;
-    width: 100%;
-    margin-top: 1.5%;
-    text-align: left;
-    border-bottom: 1px solid black;
-}
-
-.filtersortdiv{
-    border: 1px solid black;
-    height: 3%;
-    width: 100%;
-    margin-top: 1%;
-}
-
-.bodycareproductsdiv{
-    border: 1px solid green;
-    height: 75%;
-    width: 99%;
-    margin: 1% 1% 1% 1%;
-}
-
-.bodycareproducts1{
-    border: 1px solid black;
-    height: 30%;
-    display: flex;
-}
-
-.bodycareproductsinside{
-    border: 1px solid blue;
-    height: 95%;
-    width: 23%;
-    margin: 0.75% 0.75% 0.75% 0.75%;
-}
-
-.bodycareproductsinsideimg{
+.BodyCare_main_Div_RightSide{
     /* border: 1px solid red; */
-    height: 65%;
-    width: 95%;
-    margin: 1% 1% 1% 1%;
+    margin-left: 7%;
 }
-
-.bodycareproductsinsidead{
-    /* border: 1px solid black; */
-    height: 4%;
-    width: 80%;
-    margin: auto;
-    margin-top: 0.5%;
-}
-
-.bodycareproductsinsidename{
-    /* border: 1px solid blue; */
-    height: 5%;
-    width: 80%;
-    margin: auto;
-    margin-top: 0.5%;
-}
-
-.bodycareproductsinsidetype{
-    /* border: 1px solid black; */
-    height: 3%;
-    width: 80%;
-    margin: auto;
-    margin-top: 0.5%;
-}
-
-.bodycareproductsinsideprice{
-    /* border: 1px solid blue; */
-    height: 5%;
-    width: 65%;
-    margin: auto;
-    margin-top: 0.5%;
-}
-
-.bodycareproductsinsideaddtobag{
-    /* border: 1px solid black; */
-    height: 7.5%;
-    width: 95%;
-    margin: 0.5% 0.5% 0.5% 0.5%;
-    background-color: rgb(51,51,51);
-}
-
-.bodycareproductsinsiderating{
-    border: 1px solid black;
-    height: 4.5%;
-    width: 95%;
-    margin: 0.5% 0.5% 0.5% 0.5%;
-}
-
-.bodycareproductsinsideaddtobagbtn{
-    /* border: 1px solid black; */
-    height: 100%;
+.BodyCare_main_Div_RightSide_mapDiv{
     width: 100%;
-    background-color: rgb(51,51,51);
-    color: rgb(242,242,242);
-    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1.2rem;
+    /* border:1px solid black */
 }
 
-.bodycareproductsinsideaddtobagbtn:hover{
-    background-color: rgb(242,242,242);
-    color: rgb(51,51,51);
-    cursor: pointer;
+.BodyCare_main_Div_AllProducts{
+    text-align: center;
+    /* border: 1px solid black; */
 }
 
-.bodycareproductsinsideimgin{
-    height: 100%;
-    width: 42%;
+.title_Div{
+    color: black;
+    font-weight: 550;
+    font-size: 0.95rem;
+}
+.substitle_Div{
+    font-size: 0.75rem;
+}
+.price_Div{
+    margin-top: 0.6rem;
+    color: black;
+    font-weight: 550;
+    font-size: 1.1rem;   
+}
+.mixmatch_Div{
+    padding-top: 0.3rem;
+    width: 170px;
     margin: auto;
+    font-size: 0.7rem;
+    color: red;
 }
-
-.bodycareproductsinsideadpara{
-    height: 80%;
+.addToBag_button_main_Div{
     width: 90%;
     margin: auto;
-    font-size: 13px;
-    font-style: italic;
-    font-weight: 700;
-    color: rgb(66,86,153);
+    margin-top: 0.5rem;
+    color: white;
+    background-color: black;
+    padding-top: 0.5rem;
+    height: 40px;
+    font-size: 0.8rem;
 }
-
-.bodycareproductsinsidenamepara{
-    height: 80%;
-    width: 90%;
-    margin: auto;
-    font-weight: 700;
-    color: rgb(51,51,51);
-}
-
-.bodycareproductsinsidetypein{
-    height: 90%;
-    width: 90%;
-    margin: auto;
-    font-size: 11px;
-    font-weight: 500;
-    color: rgb(103, 105, 105);
-}
-
-.bodycareproductsinsidepricein{
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    font-weight: 500;
-    color: rgb(51,51,51);
-}
-
-.bodycarepagerighttopdivin{
-    height: 92%;
-    width: 19%;
-    margin: 1% 1% 1% 1%;
-    border: 1px solid green;
-}
-
-.bodycarepagerighttopdivin:hover{
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.bodycarepagerighttopdivinimg{
-    height: 80%;
-    width: 100%;
-    border: 1px solid red;
-}
-
-.bodycarepagerighttopdivinimgin{
-    height: 100%;
-    width: 100%;
-}
-
-.bodycarepagerighttopdivinname{
-    border: 1px solid black;
-    height: 18%;
-    width: 98%;
-    margin: 0.5% 0.5% 0.5% 0.5%;
-}
-
-.bodycarepagerighttopdivinnamein{
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.homelocate{
-    /* border: 1px solid black; */
-    height: 1.5%;
-    margin-top: 0.25%;
-    margin-left: 0.25%;
-}
-
-.homelocatein{
-    font-size: 10px;
-    text-align: left;
-}
-
-.topoffers{
-    /* border: 1px solid black; */
-    height: 1.5%;
-    margin-top: 1%;
-    margin-left: 1%;
-}
-
-.homeoffersin{
-    height: 90%;
-    width: 90%;
-    font-size: 12px;
-    text-align: left;
-    font-weight: 500;
-}
-
-.homeoffersin:hover{
-    cursor: pointer;
-}
-
-.topofferslist{
-    /* border: 1px solid red; */
-    height: 10%;
-    margin-top: 1.5%;
-    margin-left: 1%;
-}
-
-.topofferslistin{
-    border: 1px solid white;
-    height: 25%;
-    width: 80%;
-    margin-top: 2%;
-}
-
-.topofferslistinpara{
-    color: rgb(51,51,51);
-    font-size: 13px;
-    text-align: left;
-}
-
-.topofferslistinpara:hover{
-    cursor: pointer;
-    color: rgb(92, 92, 243);
-}
-
-.filterdiv{
-    border: 1px solid green;
-    height: 90%;
-    width: 75%;
-    background-color: rgb(242,242,242);
-    display: flex;
-}
-
-.filterdivpara{
-    font-size: 16px;
-    font-weight: 700;
-    text-align: left;
-    width: 80px;
-    height: 30px;
-    /* border: 1px solid red; */
-}
-
-.filterdivproducttype{
-    border: 1px solid green;
-    height: 95%;
-    width: 30%;
-    margin-left: 2%;
-}
-
-.sortproducthead{
-    font-weight: 600;
-    margin-top: 15px;
-}
-

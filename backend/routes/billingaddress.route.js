@@ -7,10 +7,10 @@ const billingAddressRouter=Router();
 
 
 billingAddressRouter.get('/',authentication,authorisation(['user',"admin"]),BillingAddressController.getBillingAddresses)
-billingAddressRouter.post('/create',authentication,authorisation(['user']),BillingAddressController.addBillingAddress)
-billingAddressRouter.get('/:id',authentication,authorisation(['user']),BillingAddressController.getSingleBillingAddress)
-billingAddressRouter.put('/:id',authentication,authorisation(['user']),BillingAddressController.updateBillingAddress)
-billingAddressRouter.delete('/:id',authentication,authorisation(['user']),BillingAddressController.deleteBillingAddress)
+billingAddressRouter.post('/create',authentication,authorisation(['user','admin']),BillingAddressController.addBillingAddress)
+billingAddressRouter.get('/:id',authentication,authorisation(['user','admin']),BillingAddressController.getSingleBillingAddress)
+billingAddressRouter.put('/:id',authentication,authorisation(['user','admin']),BillingAddressController.updateBillingAddress)
+billingAddressRouter.delete('/:id',authentication,authorisation(['user','admin']),BillingAddressController.deleteBillingAddress)
 
 
 module.exports={
