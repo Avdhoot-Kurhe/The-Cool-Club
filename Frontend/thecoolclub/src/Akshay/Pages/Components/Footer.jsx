@@ -2,12 +2,15 @@ import {
   Box,
   Button,
   Center,
+  Flex,
   Heading,
   HStack,
   Image,
   Input,
   Link,
+  ListItem,
   Text,
+  UnorderedList,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
@@ -70,6 +73,7 @@ const footerLinks = [
     { text: "FIND US" },
     { text: "Store Locator" },
     { text: "Global Locations" },
+    { text: "Global Locations" },
   ],
 ];
 
@@ -79,7 +83,7 @@ const Footer = () => {
       <Center w="100%" mb="8%">
         <VStack>
           <Heading>Bath & Body Works</Heading>
-          <Text textAlign="center" w="75%" color="#666">
+          <Text textAlign="center" w={{ md: "75%", base: "95%" }} color="#666">
             Bath and Body Works is your go-to place for gifts & goodies that
             surprise & delight. From fresh fragrances to soothing skin care, we
             make finding your perfect something special a happy-memory-making
@@ -138,6 +142,39 @@ const Footer = () => {
           );
         })}
       </HStack>
+      <Box w="100%" bg="#f2f2f2" textAlign="center" p="0">
+        <UnorderedList className="menu">
+          <Flex gap="20px" justify="center">
+            <ListItem>
+              <Text>Terms Of Use |</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Privacy Policy |</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Security Bug Report |</Text>
+            </ListItem>
+            <ListItem>
+              <Text>California |</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Shop by Fragrance |</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Product Ingredients |</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Get Inspired |</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Diversity, Equity & Inclusion |</Text>
+            </ListItem>
+          </Flex>
+        </UnorderedList>
+        <Text mt="15px">
+          © 2022 Bath & Body Works Direct, Inc. All Rights Reserved.
+        </Text>
+      </Box>
     </Box>
   );
 };

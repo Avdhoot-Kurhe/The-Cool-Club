@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Category from "./Category";
+import TopOffers from "./TopOffers";
 
 const tabsData = [
   {
@@ -77,6 +78,14 @@ const GoodThings = () => {
           p="10px 0"
           w="80%"
           src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw7927178e/images/Christmas2022/b1g1candles_c1_16x9.gif?yocs=s_"
+        />
+      </Center>
+      {/* <TopOffers /> */}
+      <Center>
+        <Image
+          p="10px 0"
+          w="80%"
+          src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw03022172/images/Christmas2022/bc_sb-faceted_c1_hm.gif?yocs=s_"
         />
       </Center>
       <Category />

@@ -112,7 +112,7 @@ const Category = () => {
         NEW Dream Bright
       </Center>
       <Center>
-        <Text w="37%" color="#666" textAlign="center">
+        <Text w={{ md: "37%", base: "75%" }} color="#666" textAlign="center">
           Let fragrance dreams become reality with a unique blend of sapphire
           berries, night-blooming orchid and crystalized vanilla.
         </Text>
