@@ -4,7 +4,18 @@ import './BodycarePage.css';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProductsData } from "../Redux/AppReducer/action";
-
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+  } from '@chakra-ui/react';
+  import {ChevronDownIcon} from '@chakra-ui/icons';
+  import {Button, ButtonGroup} from '@chakra-ui/react';
 const BodycarePage = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -63,21 +74,8 @@ const BodycarePage = () => {
       };
   
 
-import './Bodycarepage.css';
-import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
-  } from '@chakra-ui/react';
-  import {ChevronDownIcon} from '@chakra-ui/icons';
-  import {Button, ButtonGroup} from '@chakra-ui/react';
 
-const Bodycarepage = () => {
+
   return (
     <div className='bodycarepage'>
         Bodycarepage
