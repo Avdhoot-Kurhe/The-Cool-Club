@@ -1,9 +1,9 @@
 import AllRoutes from './Routes/AllRoutes';
-import './App.css';
 import Bodycarepage from './Pages/Bodycarepage';
 
 import ShippingPage from './components/pankajsingh/Shipping/ShippingPage';
 import BillingPage from './components/pankajsingh/Shipping/BillingPage';
+import AdminPage from './Pages/AdminPage';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <AllRoutes/>
       {/* <Bodycarepage /> */}
      {/* <ShippingPage /> */}
-     <BillingPage />
+     <AdminPage />
     </div>
   );
 }
