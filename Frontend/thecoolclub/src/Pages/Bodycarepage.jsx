@@ -54,6 +54,7 @@ const Bodycarepage = () => {
             productid : item._id,
             quantity : 1,
             uuid : 12,
+            productimage : item.productimageurl,
             deliveryType: "shipit"
           }
 
