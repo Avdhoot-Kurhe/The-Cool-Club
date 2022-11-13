@@ -34,19 +34,25 @@ export  const handleGetToCart = () => (dispatch) => {
 }
 
 
-export  const handleAddToCart = (item) => (dispatch) => {
+export  const handleAddToCart = (item) =>  (dispatch) => {
+  console.log("item in add ",item)
   dispatch({type : types.POST_PRODCUT_REQUEST})
-  return axios.post(`https://thecoolclub.onrender.com/cart/addtocart`,item,{
+  return  axios.post(`https://thecoolclub.onrender.com/cart/addtocart`,item,{
     headers: {
-      token: `Bearer ${localStorage.getItem("token")}`
+      authorization: `Bearer ${localStorage.getItem("token")}`
     }})
     .then((res) => {
       console.log("add cart",res.data);
      dispatch({ type : types.POST_PRODCUT_SUCCESS , payload : res.data})
     })
     .catch((err) => {
+      console.log("didnt add")
       return dispatch({type : types.POST_PRODCUT_FAILURE})
     })
+    .finally(() => {
+      console.log("done")
+    }) 
+    
 }
 
 
