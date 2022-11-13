@@ -1,4 +1,5 @@
 const { CartModel } = require("../models/cart.model");
+const { ProductModel } = require("../models/product.model");
 
 const getCartItems = async (req, res) => {
   try {
@@ -10,22 +11,11 @@ const getCartItems = async (req, res) => {
 };
 const addToCart = async (req, res) => {
   let newitem = req.body;
-  try {
-    let product = await CartModel.insertMany([newitem]);
-    res.send({ msg: "Item added successfully", newitem: product });
-  } catch (err) {
-    res.send({ msg: "Something went wrong while adding data to cart" });
-  }
-};
-const updateCartItem = async (req, res) => {
-  let { id } = req.params;
-  try {
-    let update = req.body;
-    let updatestatus = await CartModel.updateOne({ _id: id }, { ...update });
-    res.send({ msg: "cart item updated successfully", updatestatus });
-  } catch (err) {
-    res.send({ msg: "Something went wrong while updating cart" });
-  }
+
+  let newproduct= await ProductModel.findOne({productimageurl: newitem.productimage})
+  console.log(newproduct); 
+   await CartModel.insertMany([newproduct]);
+    res.send({ msg: "Item added successfully" });
 };
 const deleteCartItem = async (req, res) => {
   let { id } = req.params;
@@ -40,7 +30,6 @@ const deleteCartItem = async (req, res) => {
 const CartController = {
   getCartItems,
   addToCart,
-  updateCartItem,
   deleteCartItem,
 };
 
