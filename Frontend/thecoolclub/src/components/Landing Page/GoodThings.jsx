@@ -10,8 +10,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import Category from "./Category";
-import TopOffers from "./TopOffers";
+import Category from "../Landing Page/Category";
 
 const tabsData = [
   {

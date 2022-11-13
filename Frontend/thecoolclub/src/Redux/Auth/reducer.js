@@ -2,11 +2,12 @@
 import { POST_LOGIN_FAILURE, POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS } from "./actonTypes";
 
 
-    const initialState = {
+    export const initialState = {
         isAuth : localStorage.getItem("isAuth")|| false,
         token :  localStorage.getItem("token")||'',
         isLoading : false,
-        isError : false
+        isError : false,
+        currentUser:null
     }
  const reducer = (state= initialState , { type, payload}) => {
      switch(type) {
@@ -16,12 +17,11 @@ import { POST_LOGIN_FAILURE, POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS } from "./ac
                 isLoading : true,
              }
         case POST_LOGIN_SUCCESS :
-            let newAuth = true;
-            localStorage.setItem("isAuth", newAuth)
-            localStorage.setItem("token",payload)
+            localStorage.setItem("isAuth", JSON.stringify(true))
+            localStorage.setItem("token",payload.token)
             return {
                 ...state,
-                isAuth : newAuth,
+                isAuth : true,
                 isError : false,
                 isLoading : false,
                 token : payload
