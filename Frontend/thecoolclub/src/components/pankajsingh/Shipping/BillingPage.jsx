@@ -19,10 +19,12 @@ import {
   Select,
   Checkbox,
   Radio,
-  Link
+  Link,
+  Image
 } from "@chakra-ui/react";
 
 import "./shippingPage.css";
+import { useNavigate } from "react-router-dom";
 
 const BillingPage = () => {
   const [email, setEmail] = useState(null);
@@ -79,6 +81,13 @@ const BillingPage = () => {
       img : "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dwf634b9ab/images/payments/payment-cc.png?yocs=o_s_"
     }
   ]
+
+  const navigate = useNavigate();
+  const handlePlaceOrder = () => {
+    setTimeout(() => {
+      navigate("/")
+    }, 1000);
+  }
   return (
     <div>
       <div className="main_shipping_page">
@@ -103,13 +112,13 @@ const BillingPage = () => {
             <div className="shipping_page_right_main_shippingAddress">
               <Heading textAlign='left'ml="1rem" mt="2.3rem"> CONTACT INFORMATION </Heading>
               <FormControl isInvalid={isErrorFirstName} isRequired>
-              <Box display='flex' justifyContent='space-between'>
-              <FormLabel marginLeft="0.8rem">Email</FormLabel>
-              <FormLabel marginLeft="0.8rem">Required</FormLabel>
+              <Box display='flex' mt="1rem">
+              <FormLabel marginLeft="0.5rem">Email</FormLabel>
+              <FormLabel ml="60%">Required</FormLabel>
               </Box>
                 <Input
                   paddingLeft="0.5rem"
-                  marginTop="1rem"
+                  marginTop="0.1rem"
                   type="email"
                   value={email}
                 //   onChange={handleChange}
@@ -123,24 +132,10 @@ const BillingPage = () => {
                     please enter your email
                   </FormErrorMessage>
                 )}
-              </FormControl>
-
-
-
-
-            
-
-              
-
-             
-
-              
-
-             
-                
+              </FormControl>   
             </div>
             <div className="shipping_page_right_main_shippingMethod">
-            <Accordion defaultIndex={[0]} allowMultiple>
+            <Accordion defaultIndex={[0]} allowMultiple >
                 <AccordionItem>
                   <h2>
                     <AccordionButton
@@ -148,7 +143,7 @@ const BillingPage = () => {
                       border="1px dashed black"
                       cursor="pointer"
                     >
-                      <Box flex="1" textAlign="left">
+                      <Box flex="1" textAlign="left" mt="0.5rem">
                         <h2> PROMOTION CODE </h2>
                       </Box>
                       <AccordionIcon marginLeft="3rem" />
@@ -195,25 +190,24 @@ const BillingPage = () => {
                   </h2>
                   <AccordionPanel>
                     <FormControl  isRequired>
-                      <FormLabel marginLeft="0.8rem">Gift Card Number</FormLabel>
+                      <FormLabel marginLeft="0.6rem">Gift Card Number</FormLabel>
                         <Input
-                          paddingLeft="0.5rem"
                           // pr='4.5rem'
                         //   value={promo}
                         //   onChange={handlePassowrdChange}
-                          width="70%"
+                          width="80%"
                           height="30px"
                         />
-                      <FormControl> PIN</FormControl>
-                      <Input />
+                      <FormControl mt="0.7rem"> PIN</FormControl>
+                      <Input  width="50%"/>
                       
-                      <Box display='flex'>
+                      <Box display='flex' mt="0.9rem">
                         <Button> APPLY </Button>
-                        <Text> Or</Text>
-                        <Text> Check Gift Card Balance</Text>
+                        <Text mt="0.5rem" ml="0.5rem"> Or</Text>
+                        <Text mt="0.5rem" ml="0.5rem"> Check Gift Card Balance</Text>
                       </Box>
 
-                      <Text>Up to 2 Gift Cards can be applied per order.</Text>
+                      <Text mt="0.6rem">Up to 2 Gift Cards can be applied per order.</Text>
                     </FormControl>
                   </AccordionPanel>
                 </AccordionItem>
@@ -222,35 +216,36 @@ const BillingPage = () => {
             </div>
 
             <div className="payment_method">
-                  <h2>PAYMENT METHOD</h2>
-                  <div>
+                  <Box mt="1.5rem">PAYMENT METHOD</Box>
+                  <Box display="flex" mt="0.5rem">
                     <input type="radio"  />
                   {
                     payment_img.map((item) => (
-                      <img  src={item.img} alt="img"/>
+                      <Image src={item.img} alt="img" ml="0.3rem"/>
                     ))
                   }
-                  <span>
+                  <Box display='flex' ml="1.5rem">
                     <input type="radio"/>
-                    <img src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dw39bcf393/images/payments/payment-ppal.svg?yocs=o_s_" />
-                    </span>
+                    <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites/default/dw39bcf393/images/payments/payment-ppal.svg?yocs=o_s_" />
+                    </Box>
 
-                  </div>
+                  </Box>
                   <div>
                     <FormControl isRequired> 
-                    <FormLabel>Required</FormLabel>
+                    <FormLabel mt="0.5rem">Required</FormLabel>
                     </FormControl>
                   </div>
 
                 <div>
                    <FormControl isRequired>
-                      <FormLabel> Name on Card</FormLabel>
+                      <FormLabel mt="1rem"> Name on Card</FormLabel>
                       <Input />
 
-                      <FormLabel>Number</FormLabel>
+                      <FormLabel mt="1rem">Number</FormLabel>
                       <Input />
 
-                      <FormLabel>Expiration Date</FormLabel>
+                      <FormLabel mt="1rem">Expiration Date</FormLabel>
+                      <Box display='flex' pt="0.5rem">
                       <Select>
                         <option value="">Month</option>
                         <option value="">Jan</option>
@@ -268,16 +263,17 @@ const BillingPage = () => {
                         <option value="">April</option>
                         <option value="">May</option>
                       </Select>
+                      </Box>
 
                       <Box>
-                         <FormLabel>Security Code</FormLabel>
+                         <FormLabel mt="1rem">Security Code</FormLabel>
                          <Input />
                       </Box>
                    </FormControl>
 
-                   <Box mb="4rem">
-                     <Button> Place Order</Button>
-                     <Text> Privacy Policy</Text>
+                   <Box mb="4rem" display="flex" mt="1.2rem" ml="2%">
+                     <Button onClick={handlePlaceOrder}> Place Order</Button>
+                     <Text ml="1.2rem" mt="0.5rem"> Privacy Policy</Text>
                    </Box>
                 </div>
             </div>
@@ -287,18 +283,18 @@ const BillingPage = () => {
 
           <div className="shipping_page_left_main">
             <Box>
-               <Heading fontWeight='400'> YOUR ORDER</Heading>
+               <Heading fontWeight='400'>YOUR ORDER</Heading>
             </Box>
             <Box display='flex' className="border_product">
                <Box mt="1rem">
                  <img src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb15abfdd/hires/026573586.jpg?sw=177&yocs=o_s_" alt="" 
                  className="productImage"/>
                </Box>
-               <Box className="img_Div" ml="1rem">
-                  <p className="lineHeight lineHeigh_heading">TWISTED PEPPERMINT</p>
-                  <p className="lineHeight">Gentle Foaming Hand Soap</p>
-                  <p className="lineHeight">Size: 8.75 fl oz / 259 mL</p>
-                  <p className="lineHeight">Qty : 1</p>
+               <Box mt="0.5rem" ml="0.5rem">
+                  <p>TWISTED PEPPERMINT</p>
+                  <p >Gentle Foaming Hand Soap</p>
+                  <p >Size: 8.75 fl oz / 259 mL</p>
+                  <p >Qty : 1</p>
                </Box>
             </Box>
             <Box borderBottom="5px solid rgb(229,229,229)" textAlign='right' >
@@ -327,10 +323,10 @@ const BillingPage = () => {
             <Box mt="7rem" border="2px solid black">
                <Text> SHIPPING ADDRESS</Text>
                <Box>
-                 <Text>{"USER_NAME"}</Text>
+                 {/* <Text>{"USER_NAME"}</Text>
                  <Text>{"uSER_Address"}</Text>
                  <Text>{"USER_COUNTRY"}</Text>
-                 <Text>{"USER_PHONE_nUMBER"}</Text>
+                 <Text>{"USER_PHONE_nUMBER"}</Text> */}
 
                   <Text>Shipping - Standard $6.99</Text>
                </Box>

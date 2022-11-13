@@ -1,27 +1,38 @@
-import { Button, Divider, Flex, Input, Spacer, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Divider, Flex, Input, Spacer, Stack, Text } from '@chakra-ui/react';
+import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCartDataApi } from '../../Redux/CartReducer/cart.actions';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
-const [total,setTotal]=useState(28);
-const [subtotal,setSubTotal]=useState(26);
-    const {data} = useSelector((state) => state.cartReducer)||[];
-    // const dispatch = useDispatch();
-    // useEffect(() => {
-    //   if(data.length===0){
-  
-    //       dispatch(getCartDataApi());
-    //   }
-    // },[data.length,dispatch]);
+const [tota,setTota]=useState([]);
+const navigate = useNavigate();
 
+    const getcartData = () => {
+        axios.get(`https://thecoolclub.onrender.com/cart/`,{
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`
+          }})
+          .then((res) => {
+            console.log("cartdata",res.data);
+            setTota(res.data);
+            
+          })
+      }
+    var total = 0;
+ 
+    const sum = tota.map((curr) =>{
+        return (
+            total = total + Number(curr.price)
+        )
+    })
 
-    // const sum = data.reduce((pre,cur) =>   pre + (cur.price*cur.purchasequantity),0)
-    // setSubTotal(sum);
-    // setTotal(sum);
+    useEffect(() => {
+        getcartData()
+        },[sum]);
 
     return (
+        <>
         <Flex pt="50px">
         <Stack w="35%" borderWidth="2px" borderColor="#f2f2f2" p="30px" spacing="10px">
             <Text fontWeight="600">PROMOTION CODE</Text>
@@ -35,7 +46,7 @@ const [subtotal,setSubTotal]=useState(26);
             <Flex>
                 <Text>Subtotal</Text>
                 <Spacer />
-                <Text>{subtotal}</Text>
+                <Text>{total}</Text>
             </Flex>
              <Flex>
                 <Text>tax</Text>
@@ -55,6 +66,12 @@ const [subtotal,setSubTotal]=useState(26);
             </Flex>
         </Stack>
         </Flex>
+        <Box textAlign='center' mt="1.5rem">
+            <Button background="black" color="white" onClick={() => {
+                navigate("/billing")
+            }}>Go To Payment </Button>
+        </Box>
+        </>
     );
 };
 

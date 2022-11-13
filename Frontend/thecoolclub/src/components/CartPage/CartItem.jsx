@@ -5,13 +5,13 @@ import { deleteCartDataApi } from "../../Redux/AppReducer/action";
 import { updateCartApi } from "../../Redux/CartReducer/cart.actions";
 
 const CartItem = ({item,deleteCartItem}) => {
+  console.log(item);
   const dispatch = useDispatch();
   const updateQuantity = (id, count) => {
       let payload = {
         id,
         count,
       };
-      dispatch(updateCartApi(payload));
     
   };
   const onDeleteHandle = (id) => {
@@ -36,7 +36,7 @@ const CartItem = ({item,deleteCartItem}) => {
         <Text fontWeight="600">{item.title}</Text>
         <Text>{item.subtitle}</Text>
         <Text color="#e10068">
-          Mix & Match Full-Size: Buy 3, Get 3 Free or Buy 2, Get 1 Free
+  
         </Text>
       </Box>
       <Box width="10%">
@@ -47,7 +47,7 @@ const CartItem = ({item,deleteCartItem}) => {
       
       <Flex align="center" w='20%'>
         <Button
-          onClick={() => updateQuantity(item._id, -1)}
+          onClick={() => updateQuantity(-1)}
           disabled={item.purchasequantity === 1}
           colorScheme='gray'
           fontSize="20px"
@@ -56,11 +56,11 @@ const CartItem = ({item,deleteCartItem}) => {
           -
         </Button>
         <Flex m="0 10px" fontWeight="600" width="20px" justify="center">
-          {item.quantity}
+          {1}
         </Flex>
         
         <Button
-          onClick={() => updateQuantity(item._id, 1)}
+          onClick={() => updateQuantity(1)}
           colorScheme='gray'
           fontSize="20px"
           p="10px 0"
@@ -70,7 +70,7 @@ const CartItem = ({item,deleteCartItem}) => {
       </Flex>
         <Box w='10%'>
         <Text fontWeight={600} fontSize="20px">
-          ${item.purchasequantity * item.price}
+          ${item.price}
         </Text>
       </Box>
         <Button
@@ -88,7 +88,7 @@ const CartItem = ({item,deleteCartItem}) => {
             borderRadius: "100%",
             cursor: "pointer",
           }}
-          onClick={(_id) => onDeleteHandle(item._id)}
+          onClick={() => onDeleteHandle(item.productid)}
         >X</Button>
       
     </Flex>

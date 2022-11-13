@@ -10,8 +10,7 @@ import CartItem from "./CartItem";
 import { useState } from "react";
 
 const CartList = () => {
-    // const[count,setCount] = React.useState(0);
-    const [item, setItem] = useState([]);
+    const [cartItem, setCartItem] = useState([]);
     const dispatch = useDispatch();
     const location = useLocation();
 
@@ -22,30 +21,31 @@ const CartList = () => {
       }
     },[dispatch, Bag.length])
 
-    // console.log("store data",Bag)
-    // console.log("cart data",cart)
 
     const getcartData = () => {
       axios.get(`https://thecoolclub.onrender.com/cart/`,{
         headers: {
-          token: `Bearer ${localStorage.getItem("token")}`
+          authorization: `Bearer ${localStorage.getItem("token")}`
         }})
         .then((res) => {
-          console.log("cartdata",res);
-          setItem(res.data);
+          console.log("cartdata",res.data);
+          setCartItem(res.data);
+          
         })
     }
-
+//  console.log(cartItem);
     const deleteCartItem = (id) => {
-
+      console.log(id)
       axios
       .delete(`https://thecoolclub.onrender.com/cart/${id}`, {
-        headers: { token: `Bearer ${localStorage.getItem("token")}` },
+        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
       }).then((res) => getcartData())
       .catch((err) => console.log(err))
       // console.log(id)
       // dispatch(getCartDataApi(id));
     }
+    
+    // console.log("item",cartItem)
     useEffect(() => {
     getcartData()
     },[])
@@ -60,9 +60,11 @@ const CartList = () => {
             <Heading size='md'w='10%'>Remove</Heading>
             </Flex>
             <Divider mt='0px'mb='20px' />
-      {isLoading?'Loading....':isError?'something went wrong!':item?.map((item) => {
+      {cartItem.length > 0 &&  cartItem?.map((item) => {
         return (
+          <Box border="1px solid black" mt="0.7rem" key={item._id}>
           <CartItem key={item._id} item={item}  deleteCartItem={(id) =>deleteCartItem(id)}/>
+          </Box>
         );
       })}
     </Box>

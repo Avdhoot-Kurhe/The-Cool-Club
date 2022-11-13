@@ -8,6 +8,7 @@ import CartPage from "../Pages/CartPage";
 import Login from "../components/pankajsingh/Login/Login";
 import SignUp from "../components/pankajsingh/SignUp/SignUp";
 import ProductDetails from "../components/productDetails/ProductDetails";
+import BillingPage from "../components/pankajsingh/Shipping/BillingPage";
 
 const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
       <Route path="/cart" element={<CartPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/billing" element={<BillingPage />}/>
     </Routes>
   );
 };
