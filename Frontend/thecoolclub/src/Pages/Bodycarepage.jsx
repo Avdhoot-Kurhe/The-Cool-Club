@@ -51,9 +51,10 @@ const Bodycarepage = () => {
       const handleAddToBag = (item) => {
         console.log(item);
           const payload = {
-            productid : item._id,
-            quantity : 1
-          }
+            productid: item._id,
+            quantity: 1,
+            productimage:item.productimageurl
+          };
 
        dispatch(handleAddToCart(payload)).then((res) => {
           dispatch(handleGetToCart())
