@@ -7,6 +7,7 @@ import AdminPage from '../Pages/AdminPage'
 import CartPage from '../Pages/CartPage'
 import Login from '../components/pankajsingh/Login/Login'
 import SignUp from '../components/pankajsingh/SignUp/SignUp'
+import ProductDetails from '../components/productDetails/ProductDetails'
 
 
 const AllRoutes = () => {
@@ -14,6 +15,7 @@ const AllRoutes = () => {
     <Routes>
         <Route path="/home" element={<LandingPage/>}/>
         <Route path="/bodyCare" element={<Bodycarepage/>}/>
+        <Route path='/bodyCare/:id' element={<ProductDetails />} />
         <Route path="/shipping" element={<ShippingPage/>}/>
         <Route path="/admin" element={<AdminPage/>}/>
         <Route path="/cart" element={<CartPage/>}/>

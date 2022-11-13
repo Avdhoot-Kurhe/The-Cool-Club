@@ -7,16 +7,16 @@ const BodyCareFilter = () => {
     const [searchParams , setSearchParams] = useSearchParams();
     const [category , setCategory] = useState([]);
 
-    const handleOnClick = (e) => {
-        const newCategory = [...category];
-        if(newCategory.includes(e.target.value)){
-            newCategory.splice(newCategory.indexOf(e.target.value),1)
-        } else {
-            newCategory.push(e.target.value)
-        }
-        setCategory(newCategory)
-    }
-    console.log(category);
+    // const handleOnClick = (e) => {
+    //     const newCategory = [...category];
+    //     if(newCategory.includes(e.target.value)){
+    //         newCategory.splice(newCategory.indexOf(e.target.value),1)
+    //     } else {
+    //         newCategory.push(e.target.value)
+    //     }
+    //     setCategory(newCategory)
+    // }
+    // console.log(category);
 
     const topOffer = [
       {
