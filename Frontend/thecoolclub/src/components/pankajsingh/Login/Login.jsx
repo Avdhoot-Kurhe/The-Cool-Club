@@ -10,7 +10,7 @@ const Login = () => {
  const dispatch = useDispatch();
  const navigate = useNavigate();
 
-
+ 
   const handleOnChange = (e) => {
     const { name ,value} = e.target;
     setData({...data, [name] : value})
@@ -20,6 +20,7 @@ const Login = () => {
     e.preventDefault();
     console.log(data);
     dispatch(login(data)).then((res) => {
+      console.log(res.data)
       return navigate("/home")
     })
   }

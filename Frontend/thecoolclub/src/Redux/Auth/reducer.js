@@ -1,3 +1,4 @@
+
 import { POST_LOGIN_FAILURE, POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS } from "./actonTypes";
 
 
@@ -7,7 +8,6 @@ import { POST_LOGIN_FAILURE, POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS } from "./ac
         isLoading : false,
         isError : false
     }
-
  const reducer = (state= initialState , { type, payload}) => {
      switch(type) {
          case POST_LOGIN_REQUEST:

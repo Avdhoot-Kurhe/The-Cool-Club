@@ -1,0 +1,32 @@
+.DetailsProduct_main_Div{
+    display: flex;
+    justify-content: center;
+}
+
+.DetailsProduct_main_Div_right{
+    margin-top: 1rem;
+   }
+
+.productName{
+    font-size: 1.6rem;
+}
+.subtitle{
+    font-size: 1rem;
+}
+.price{
+    font-size: 1.3rem;
+    padding-top: 0.5rem;
+}
+.quanitity{
+    padding-top: 0.5rem;
+}
+.mixmatch{
+    color: red;
+    padding-top: 1rem;
+}
+
+.howDoYou_div{
+    margin-top: 0.4rem;
+    border-top: 1px solid black;
+    padding-top: 1.5rem;
+}
