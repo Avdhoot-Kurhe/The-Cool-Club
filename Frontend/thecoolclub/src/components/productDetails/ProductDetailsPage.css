@@ -5,6 +5,7 @@
 
 .DetailsProduct_main_Div_right{
     margin-top: 1rem;
+    margin-left: 5%;
    }
 
 .productName{
@@ -28,5 +29,36 @@
 .howDoYou_div{
     margin-top: 0.4rem;
     border-top: 1px solid black;
+    border-bottom: 1px solid black;
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.radioSpan_Div{
+    display: flex;
+    margin-top: 0.5rem;
+}
+.margin{
+    padding-left: 1.5rem;
+}
+
+.addBag_div{
+    margin-top: 1.8rem;
+    display: flex;
+}
+.minus_Div{
+    width: 60px;
+    height: 40px;
+    background-color: aliceblue;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.addBtn{
+    width: 170px;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 40px;
 }

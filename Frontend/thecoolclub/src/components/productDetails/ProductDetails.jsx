@@ -25,11 +25,11 @@ const ProductDetails = () => {
     }
 
     console.log("id",id);
-    // useEffect(()=> {
-    //    if(products.length > 0 || location) {
+    useEffect(()=> {
+       if(products.length > 0 || location) {
         dispatch(getProductsData());
-    //    }
-    // },)
+       }
+    },[])
 
     useEffect(() => {
         if(id){
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             console.log("currentProduct",currentProduct);
             currentPro && setCurrentPro(currentProduct)
         }
-    },[id, currentPro])
+    },[currentPro])
   return (
     <div className='DetailsProduct_main_Div'>
         <div className='DetailsProduct_main_Div_left'>
@@ -54,30 +54,30 @@ const ProductDetails = () => {
             </div>
 
             <div className='howDoYou_div'>
-                <p>How do you want to receive it?</p>
-                <div>
+                <p style={{paddingTop:"0.5rem"}}>How do you want to receive it?</p>
+                <div className='radioSpan_Div'>
                     <input type="radio" />
-                    <span>
+                    <span className='margin'>
                         <p>Ship it</p>
-                        <p>Available</p>
+                        <p style={{fontSize:"0.9rem"}}>Available</p>
                     </span>
                 </div>
 
-                <div>
+                <div className='radioSpan_Div'>
                     <input type="radio" />
-                    <span>
+                    <span className='margin'>
                         <p>Pick Up in Store</p>
-                        <p>Set Store</p>
+                        <p style={{fontSize:"0.9rem"}}>Set Store</p>
                     </span>
                 </div>
             </div>
 
             <div className='addBag_div'>
-                <div onClick={() => handleCount(-1) }>{"-"}</div>
-                <div>{count}</div>
-                <div onClick={() => handleCount(+1)}>{"+"}</div>
+                <div onClick={() => handleCount(-1) } className="minus_Div">{"-"}</div>
+                <div className='minus_Div'>{count}</div>
+                <div onClick={() => handleCount(+1)} className="minus_Div">{"+"}</div>
                 <div>
-                    <button>ADD TO BAG</button>
+                    <button className='addBtn'>ADD TO BAG</button>
                 </div>
             </div>
         </div>

@@ -1,28 +1,55 @@
 import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import axios from "axios";
 import React from "react";
+import {useLocation} from 'react-router-dom'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { handleGetToCart } from "../../Redux/AppReducer/action";
 import { getCartDataApi } from "../../Redux/CartReducer/cart.actions";
 import CartItem from "./CartItem";
+import { useState } from "react";
 
 const CartList = () => {
     const[count,setCount] = React.useState(0);
-  const {data,isLoading,isError} = useSelector((state) => state.cartReducer);
-  console.log("store data",data)
-  const dispatch = useDispatch();
-  useEffect(() => {
-      if(data.length===0){
-          console.log('bd:',data)
-          dispatch(getCartDataApi())
-          
-        }
-    },[]);
+    const [item, setItem] = useState([])
+    const dispatch = useDispatch();
+    const location = useLocation();
 
-    // useEffect(() => {
-    //     console.log("datainre",data)
-    //     setCount(0);
-    // },[data])
-    // console.log("store data",data)
+    const {Bag,isLoading, isError,cart} = useSelector((state) => state.AppReducer);
+    useEffect(() => {
+      if(Bag.length == 0 || location) {
+        dispatch(handleGetToCart())
+      }
+    },[dispatch, Bag.length])
+
+    // console.log("store data",Bag)
+    // console.log("cart data",cart)
+
+    const getcartData = () => {
+      axios.get(`https://thecoolclub.onrender.com/cart/`,{
+        headers: {
+          token: `Bearer ${localStorage.getItem("token")}`
+        }})
+        .then((res) => {
+          // console.log("res",res);
+          setItem(res.data);
+        })
+    }
+
+    const deleteCartItem = (id) => {
+
+      axios
+      .delete(`https://thecoolclub.onrender.com/cart/${id}`, {
+        headers: { token: `Bearer ${localStorage.getItem("token")}` },
+      }).then((res) => getcartData())
+      .catch((err) => console.log(err))
+      // console.log(id)
+      // dispatch(getCartDataApi(id));
+    }
+    useEffect(() => {
+    getcartData()
+    },[])
+ 
   return (
     <Box>
         <Flex justify='space-between' mt='20px'>
@@ -33,9 +60,9 @@ const CartList = () => {
             <Heading size='md'w='10%'>Remove</Heading>
             </Flex>
             <Divider mt='0px'mb='20px' />
-      {isLoading?'Loading....':isError?'something went wrong!':data?.map((item) => {
+      {isLoading?'Loading....':isError?'something went wrong!':item?.map((item) => {
         return (
-          <CartItem key={item._id} product={item}  />
+          <CartItem key={item._id} item={item}  deleteCartItem={(id) =>deleteCartItem(id)}/>
         );
       })}
     </Box>

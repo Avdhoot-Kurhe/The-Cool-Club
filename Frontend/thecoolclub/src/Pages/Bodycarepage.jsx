@@ -3,29 +3,26 @@ import { useState,useEffect } from 'react';
 import './Bodycarepage.css';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { getProductsData } from "../Redux/AppReducer/action";
+import { getProductsData, handleAddToCart, handleGetToCart } from "../Redux/AppReducer/action";
 import BodyCareFilter from './BodyCareFilter';
 import BodySmallFilter from './BodySmallFilter';
-import axios from 'axios';
 
 const Bodycarepage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const {products} = useSelector((store) => store.AppReducer);
-  const initialCategoryParams = searchParams.getAll("category");
-  const [category, setCategory] = useState(initialCategoryParams || []);
+  // const initialCategoryParams = searchParams.getAll("category");
+  const [category, setCategory] = useState( []);
   const location = useLocation();
-  const initialSortParams = searchParams.get("sortBy");
+  // const initialSortParams = searchParams.get("sortBy");
   const [sortBy, setSortBy] = useState("");
 
 
     useEffect(() => {
-     if(products.length === 0) {
-      dispatch(getProductsData()).then((res) => {
-        console.log("res",res.data)
-      })
+     if(products.length == 0) {
+      dispatch(getProductsData())
      }
-    })
+    },[])
    
     useEffect(() => {
         if (category || sortBy) {
@@ -48,32 +45,20 @@ const Bodycarepage = () => {
       }, []);
 
 
-      const handleAddToCart = (item) => {
-        axios.post(`https://thecoolclub.onrender.com/cart/addtocart`,item,{
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`
-          }}).then((res) => {
-            console.log(res.data);
-          }).catch((err) => {
-            console.log(err);
-          })
-      }
+      const handleAddToBag = (item) => {
+        console.log(item);
+          const payload = {
+            productid : item._id,
+            quantity : 1,
+            uuid : 12,
+            deliveryType: "shipit"
+          }
 
-      // const handleChange = (e) => {
-      //   const option = e.target.value;
-    
-      //   let newCategory = [...category];
-      //   if (category.includes(option)) {
-      //     newCategory.splice(newCategory.indexOf(option), 1);
-      //   } else {
-      //     newCategory.push(option);
-      //   }
-      //   setCategory(newCategory);
-      // };
-    
-      // const handleSort = (e) => {
-      //   setSortBy(e.target.value);
-      // };
+       dispatch(handleAddToCart(payload)).then((res) => {
+          dispatch(handleGetToCart())
+          console.log(res.data);
+       })
+      }
   
   return (
     <div> 
@@ -89,9 +74,9 @@ const Bodycarepage = () => {
           </div>
           <div className='BodyCare_main_Div_RightSide_mapDiv'>
           {
-            products?.map((item) => {
+            products.length > 0 && products.map((item) => {
               return (
-                <div className='BodyCare_main_Div_AllProducts'>
+                <div className='BodyCare_main_Div_AllProducts' key={item._id}>
                   <Link to={`/bodyCare/${item._id}`}>
                    <img src={item.productimageurl} alt={item.title} />
                    <p className='title_Div'>{item.title}</p>
@@ -100,7 +85,7 @@ const Bodycarepage = () => {
                    <p className='mixmatch_Div'>{item.mixnmatch}</p>
                    </Link>
                    <div className='addToBag_button_main_Div'>
-                     <button onClick={() => handleAddToCart(item)}>ADD TO BAG</button>
+                     <button onClick={() => handleAddToBag(item)}>ADD TO BAG</button>
                    </div>
                 </div>
               )

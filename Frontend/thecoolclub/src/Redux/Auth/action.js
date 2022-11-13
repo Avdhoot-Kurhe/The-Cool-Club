@@ -17,13 +17,11 @@ const signUp = (payload) => (dispatch) => {
 
  const login = (payload) => (dispatch) => {
      dispatch({ type : POST_LOGIN_REQUEST});
-     return axios.post("https://thecoolclub.onrender.com/user/login",payload,{
-        headers: {
-          'token': `Bears ${localStorage.getItem("token")}`
-        }})
+     return axios.post("https://thecoolclub.onrender.com/user/login",payload)
      .then((res) => {
+        localStorage.setItem("token",res.data.token)
+        return dispatch({ type : POST_SIGNUP_SUCCESS , payload : res.data})
         alert("login successfull")
-         return dispatch({ type : POST_SIGNUP_SUCCESS , payload : res.data})
      })
      .catch((e) => dispatch({ type : POST_LOGIN_FAILURE }))
  }
