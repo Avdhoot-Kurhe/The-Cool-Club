@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getProductsData } from "../Redux/AppReducer/action";
 import BodyCareFilter from './BodyCareFilter';
+import { Button } from '@chakra-ui/react';
+import ProductCard from '../components/ProductCard';
+
 import BodySmallFilter from './BodySmallFilter';
 import axios from 'axios';
 
