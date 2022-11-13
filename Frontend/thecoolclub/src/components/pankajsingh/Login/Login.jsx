@@ -20,8 +20,8 @@ const Login = () => {
     e.preventDefault();
     console.log(data);
     dispatch(login(data)).then((res) => {
-      console.log(res.data)
-      return navigate("/home")
+      console.log(res)
+      return navigate("/")
     })
   }
   return (
@@ -80,7 +80,9 @@ const Login = () => {
             <img src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw0f47b7b9/images/loyalty/boc-launch-prospects_lacb_0.jpg?yocs=s_" alt=""  className="sing_Div_image"/>
         </div>
          <div style={{marginTop :'1rem'}}>
-           <button className="btn">CREATE AN ACCOUNT</button>
+           <button onClick={() => {
+            navigate("/signup")
+           }} className="btn">CREATE AN ACCOUNT</button>
          </div>
         </div>
 

@@ -10,8 +10,8 @@ import CartItem from "./CartItem";
 import { useState } from "react";
 
 const CartList = () => {
-    const[count,setCount] = React.useState(0);
-    const [item, setItem] = useState([])
+    // const[count,setCount] = React.useState(0);
+    const [item, setItem] = useState([]);
     const dispatch = useDispatch();
     const location = useLocation();
 
