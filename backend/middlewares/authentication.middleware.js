@@ -2,7 +2,8 @@ const jwt=require('jsonwebtoken');
 
 const authentication= async (req, res,next) => {
 
-    const token=req?.headers?.token?.split(' ')[1];
+    const token=req.headers.authorization.split(' ')[1];
+    console.log(token);
     if(!token) {
         res.send({"msg":"User not authenticated, Please Login"});
     }else{
