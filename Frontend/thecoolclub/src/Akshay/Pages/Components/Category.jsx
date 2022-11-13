@@ -45,15 +45,15 @@ const categories = [
 ];
 
 const midCollection = [
-  {
-    title: "",
-    image:
-      "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw5e99db2a/images/Christmas2022/xcat_dream-bright_c1_atb.jpg?yocs=o_s_",
-  },
-  {
-    title: "",
-    image: "",
-  },
+  // {
+  //   title: "",
+  //   image:
+  //     "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw5e99db2a/images/Christmas2022/xcat_dream-bright_c1_atb.jpg?yocs=o_s_",
+  // },
+  // {
+  //   title: "",
+  //   image: "",
+  // },
   {
     title: "Hectic holiday? Not this year.",
     link: "Shop Aromatherapy",

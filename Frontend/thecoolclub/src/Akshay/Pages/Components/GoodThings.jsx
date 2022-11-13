@@ -74,6 +74,18 @@ const GoodThings = () => {
   return (
     <>
       <Center>
+        <Text
+          display={{ base: "none", md: "block" }}
+          mt="20px"
+          p="10px"
+          w="80%"
+          bg="black"
+          color="white"
+        >
+          <Center fontWeight="bold">2 DAYS ONLY! IN STORES & ONLINE!</Center>
+        </Text>
+      </Center>
+      <Center m="1% 0">
         <Image
           p="10px 0"
           w="80%"
@@ -82,13 +94,25 @@ const GoodThings = () => {
       </Center>
       {/* <TopOffers /> */}
       <Center>
+        <Text
+          display={{ base: "none", md: "block" }}
+          mt="20px"
+          p="10px"
+          w="80%"
+          bg="red"
+          color="white"
+        >
+          <Center fontWeight="bold">LIMITED TIME ONLY!</Center>
+        </Text>
+      </Center>
+      <Center>
         <Image
-          p="10px 0"
           w="80%"
           src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw03022172/images/Christmas2022/bc_sb-faceted_c1_hm.gif?yocs=s_"
         />
       </Center>
       <Category />
+
       <Center w="100%">
         <Image
           p="2% 12%"

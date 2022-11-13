@@ -201,18 +201,6 @@ const Navbar = () => {
           <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1667990775125/images/svg-icons/UI-AddToBag-v2.svg?yocs=o_s_" />
         </HStack>
       </Box>
-      <Center>
-        {/* <Text
-          display={{ base: "none", md: "block" }}
-          p="10px 0"
-          w="80%"
-          bg="red"
-          color="white"
-        >
-          <Center fontWeight="bold">LIMITED TIME ONLY!</Center>
-        </Text> */}
-      </Center>
-
       <>
         <Drawer
           isOpen={isOpen}
