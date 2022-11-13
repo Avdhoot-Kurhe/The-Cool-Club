@@ -2,13 +2,11 @@ import * as types from "./actiontypes.js";
 import axios from "axios";
 
 
-export const getProductsData = (params) => (dispatch) => {
+export const getProductsData = () => (dispatch) => {
   dispatch({ type: types.GET_PRODUCT_REQUEST });
   return axios
     .get(
-      "http://localhost:7607/products",
-      params
-    )
+      "https://thecoolclub.onrender.com/products/")
     .then((res) => {
       return dispatch({ type: types.GET_PRODUCT_SUCCESS, payload: res.data });
     })

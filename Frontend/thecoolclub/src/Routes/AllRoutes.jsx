@@ -7,18 +7,19 @@ import AdminPage from "../Pages/AdminPage";
 import CartPage from "../Pages/CartPage";
 import Login from "../components/pankajsingh/Login/Login";
 import SignUp from "../components/pankajsingh/SignUp/SignUp";
+import ProductDetails from '../components/productDetails/ProductDetails'
 
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/bodyCare" element={<Bodycarepage />} />
-      <Route path="/shipping" element={<ShippingPage />} />
-      {/* <Route path="/*" element={<ComingSoon/>}/> */}
-      <Route path="/admin" element={<AdminPage />} />
-      <Route path="/cart" element={<CartPage />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<LandingPage/>}/>
+        <Route path="/bodyCare" element={<Bodycarepage/>}/>
+        <Route path='/bodyCare/:id' element={<ProductDetails />} />
+        <Route path="/shipping" element={<ShippingPage/>}/>
+        <Route path="/admin" element={<AdminPage/>}/>
+        <Route path="/cart" element={<CartPage/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
     </Routes>
   );
 };

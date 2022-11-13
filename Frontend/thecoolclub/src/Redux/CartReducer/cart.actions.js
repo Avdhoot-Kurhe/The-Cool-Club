@@ -2,8 +2,7 @@ import * as types from "./cart.actionTypes";
 import { getdata } from "../../utils/localStorage";
 import axios from "axios";
 let token =
-  getdata("token") ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhaGlzQGdtYWlsLmNvbSIsInVpZCI6IjYzNmUzYWM5MmQ2MDcxMjhiMGMyMDgzYyIsImlhdCI6MTY2ODI2MTE2NywiZXhwIjoxNjY4Mjc5MTY3fQ.VjOzQX48F0WUtL2MALm2IEX3z3RDLltOs0DwajerXXs";
+  localStorage.getItem("token") || null
 
 export const getCartDataApi = () => (dispatch) => {
   dispatch({ type: types.FETCH_CARTDATA_REQUEST });
@@ -40,8 +39,9 @@ export const getCartDataApi = () => (dispatch) => {
 
 export const addToCartDataApi = (payload) => async (dispatch) => {
   dispatch({ type: types.ADD_TO_CART_REQUEST });
+  console.log(payload);
   axios
-    .post(`${process.env.BACKEND_URL}/cart/addtocart`, payload, {
+    .post(`https://thecoolclub.onrender.com/cart/addtocart`, payload, {
       headers: { token: `Bearer ${token}` },
     })
     .then((res) => {

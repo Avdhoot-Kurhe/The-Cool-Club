@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getProductsData } from "../Redux/AppReducer/action";
 import BodyCareFilter from './BodyCareFilter';
+import { Button } from '@chakra-ui/react';
+import ProductCard from '../components/ProductCard';
+
 import BodySmallFilter from './BodySmallFilter';
+import axios from 'axios';
 
 const Bodycarepage = () => {
-
-  const [product, setproduct] = useState([]);
-
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
-  const products = useSelector((store) => store.AppReducer.products);
+  const {products} = useSelector((store) => store.AppReducer);
   const initialCategoryParams = searchParams.getAll("category");
   const [category, setCategory] = useState(initialCategoryParams || []);
   const location = useLocation();
@@ -22,16 +23,13 @@ const Bodycarepage = () => {
 
 
     useEffect(() => {
-        fetch("https://thecoolclub.onrender.com/products/")
-    .then((d) => d.json())
-    
-    .then((data) => {
-        console.log("data",data)
-        setproduct(data);
+     if(products.length === 0) {
+      dispatch(getProductsData()).then((res) => {
+        console.log("res",res.data)
+      })
+     }
     })
-    }, []);
-
-
+   
     useEffect(() => {
         if (category || sortBy) {
           setSearchParams({ category: category, sortBy: sortBy });
@@ -51,7 +49,19 @@ const Bodycarepage = () => {
           dispatch(getProductsData(queryParams))
         }
       }, []);
-    console.log("prdouct",product);
+
+
+      const handleAddToCart = (item) => {
+        axios.post(`https://thecoolclub.onrender.com/cart/addtocart`,item,{
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+          }}).then((res) => {
+            console.log(res.data);
+          }).catch((err) => {
+            console.log(err);
+          })
+      }
+
       // const handleChange = (e) => {
       //   const option = e.target.value;
     
@@ -82,16 +92,18 @@ const Bodycarepage = () => {
           </div>
           <div className='BodyCare_main_Div_RightSide_mapDiv'>
           {
-            product?.map((item) => {
+            products?.map((item) => {
               return (
                 <div className='BodyCare_main_Div_AllProducts'>
+                  <Link to={`/bodyCare/${item._id}`}>
                    <img src={item.productimageurl} alt={item.title} />
                    <p className='title_Div'>{item.title}</p>
                    <p className='substitle_Div'>{item.subtitle}</p>
                    <p className='price_Div'>{"$"}{item.price}</p>
                    <p className='mixmatch_Div'>{item.mixnmatch}</p>
+                   </Link>
                    <div className='addToBag_button_main_Div'>
-                     <button>ADD TO BAG</button>
+                     <button onClick={() => handleAddToCart(item)}>ADD TO BAG</button>
                    </div>
                 </div>
               )

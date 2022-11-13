@@ -11,9 +11,6 @@ const CartPage = () => {
 useEffect(()=>{
     dispatch(getCartDataApi());
 },[]);
-
-
-
     return (
         <Container maxW='70%'>
             <Text fontSize='xx-large'>Shoping Bag</Text>
