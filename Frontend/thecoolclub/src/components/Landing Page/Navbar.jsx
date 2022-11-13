@@ -25,11 +25,15 @@ import {
   AccordionPanel,
   InputGroup,
   InputRightElement,
+  Heading,
 } from "@chakra-ui/react";
 import React from "react";
-import Logo from "../../../Assets/the_cool_club_logo.png";
+import Logo from "../../Assets/the_cool_club_logo.png";
 import { BsBasket3 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useToast } from "@chakra-ui/react";
+import { logout } from "../../Redux/Auth/action";
 
 const buttonDetails = [
   {
@@ -38,31 +42,31 @@ const buttonDetails = [
   },
   {
     name: "BODY CARE",
-    link: "/bodycare",
+    link: "/bodyCare",
   },
   {
     name: "CANDLES",
-    link: "/candles",
+    link: "/bodyCare",
   },
   {
     name: "WALLFLOWERS $ AIR FRESHNERS",
-    link: "/waaf",
+    link: "/bodyCare",
   },
   {
     name: "HAND SOAPS & SANITIZERS",
-    link: "/hss",
+    link: "/bodyCare",
   },
   {
     name: "MEN's SHOP",
-    link: "/mens",
+    link: "/bodyCare",
   },
   {
     name: "MOXY",
-    link: "/moxy",
+    link: "/bodyCare",
   },
   {
     name: "HOLIDAY SHOP",
-    link: "/holiday",
+    link: "/bodyCare",
   },
 ];
 
@@ -104,6 +108,10 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const toast = useToast();
+  const isAuth  = JSON.parse(localStorage.getItem("isAuth")) || false;
+  // const store = useSelector(store => store);
+  // console.log(store);
   return (
     <>
       <Box display={{ base: "none", md: "block" }}>
@@ -132,7 +140,7 @@ const Navbar = () => {
                 h="60px"
                 cursor="pointer"
                 onClick={() => {
-                  navigate("/home");
+                  navigate("/");
                 }}
                 src={Logo}
               />
@@ -151,11 +159,38 @@ const Navbar = () => {
               <Image
                 h="40px"
                 cursor="pointer"
+                display={isAuth ? "none" : "block"}
+                onClick={() => {
+                  console.log(isAuth)
+                  if (isAuth == false) {
+                    navigate("/login");
+                  }
+                }}
                 src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw8f5c8e40/images/svg-icons/UI-MyAccount.svg?yocs=o_s_"
               />
+              <Text onClick={() => {
+                logout();
+                window.location.reload();
+              }} fontSize="15px" fontWeight="bold" display={isAuth ? "block" : "none"}>
+                {
+                  "User"
+                }
+              </Text>
               <Image
                 h="30px"
                 cursor="pointer"
+                onClick={() => {
+                  if (isAuth) {
+                    navigate("/cart");
+                  } else {
+                    toast({
+                      title: `Please Login!`,
+                      position: "top",
+                      status: "error",
+                      isClosable: true,
+                    });
+                  }
+                }}
                 src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1667990775125/images/svg-icons/UI-AddToBag-v2.svg?yocs=o_s_"
               />
             </HStack>
@@ -170,7 +205,7 @@ const Navbar = () => {
                 border="none"
                 borderRadius="none"
                 variant="outline"
-                href={el.link}
+                onClick={() => navigate(el.link)}
               >
                 {el.name}
               </Button>

@@ -52,9 +52,7 @@ const Bodycarepage = () => {
         console.log(item);
           const payload = {
             productid : item._id,
-            quantity : 1,
-            uuid : 12,
-            deliveryType: "shipit"
+            quantity : 1
           }
 
        dispatch(handleAddToCart(payload)).then((res) => {
