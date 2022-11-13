@@ -40,8 +40,9 @@ export const getCartDataApi = () => (dispatch) => {
 
 export const addToCartDataApi = (payload) => async (dispatch) => {
   dispatch({ type: types.ADD_TO_CART_REQUEST });
+  console.log(payload);
   axios
-    .post(`${process.env.BACKEND_URL}/cart/addtocart`, payload, {
+    .post(`https://thecoolclub.onrender.com/cart/addtocart`, payload, {
       headers: { token: `Bearer ${token}` },
     })
     .then((res) => {
