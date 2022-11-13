@@ -26,10 +26,10 @@ export const getCartDataApi = () => (dispatch) => {
               // console.log(cartitems);
             });
           });
-          console.log("afteer get ",cartitems)
+          // console.log("afteer get ",cartitems)
        dispatch({ type: types.FETCH_CARTDATA_SUCCESS, payload: cartitems });
-      console.log("inaction" ,res.data);
-      console.log("inaci",cartitems);
+      // console.log("inaction" ,res.data);
+      // console.log("inaci",cartitems);
     })
     .catch((err) => {
       dispatch({ type: types.FETCH_CARTDATA_FAILURE });
@@ -47,11 +47,11 @@ export const addToCartDataApi = (payload) => async (dispatch) => {
     .then((res) => {
       dispatch({ type: types.ADD_TO_CART_SUCCESS });
       dispatch(getCartDataApi());
-      console.log(res.data);
+      // console.log(res.data);
     })
     .catch((err) => {
       dispatch({ type: types.ADD_TO_CART_FAILURE });
-      console.log(err);
+      // console.log(err);
     });
 };
 
@@ -65,15 +65,15 @@ export const updateCartApi = (payload) => (dispatch) => {
     .then((res) => {
       dispatch({ type: types.UPDATE_CART_SUCCESS });
       dispatch(getCartDataApi());
-      console.log(res.data);
+      // console.log(res.data);
     })
     .catch((err) => {
       dispatch({ type: types.UPDATE_CART_FAILURE });
-      console.log(err);
+      // console.log(err);
     });
 };
 
-export const deleteCartDataApi = (payload) => (dispatch) => {
+ const deleteCartDataApi = (payload) => (dispatch) => {
   dispatch({ type: types.DELETE_FROM_CART_REQUEST });
   console.log(payload);
   axios
@@ -83,10 +83,10 @@ export const deleteCartDataApi = (payload) => (dispatch) => {
     .then((res) => {
       dispatch({ type: types.DELETE_FROM_CART_SUCCESS });
       dispatch(getCartDataApi());
-      console.log(res.data);
+      // console.log(res.data);
     })
     .catch((err) => {
       dispatch({ type: types.DELETE_FROM_CART_FAILURE });
-      console.log(err);
+      // console.log(err);
     });
 };

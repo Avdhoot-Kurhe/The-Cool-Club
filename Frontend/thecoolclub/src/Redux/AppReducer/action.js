@@ -18,3 +18,56 @@ export const getProductsData = () => (dispatch) => {
 
 
 
+export  const handleGetToCart = () => (dispatch) => {
+  dispatch({type : types.GET_PRODCUT_REQUEST})
+  return axios.get(`https://thecoolclub.onrender.com/cart/`,{
+    headers: {
+      token: `Bearer ${localStorage.getItem("token")}`
+    }})
+    .then((res) => {
+      console.log("get cart",res.data);
+       dispatch({ type : types.GET_PRODCUT_SUCCESS , payload : res.data})
+    })
+    .catch((err) => {
+      return dispatch({type : types.GET_PRODUCT_FAILURE})
+    })
+}
+
+
+export  const handleAddToCart = (item) => (dispatch) => {
+  dispatch({type : types.POST_PRODCUT_REQUEST})
+  return axios.post(`https://thecoolclub.onrender.com/cart/addtocart`,item,{
+    headers: {
+      token: `Bearer ${localStorage.getItem("token")}`
+    }})
+    .then((res) => {
+      console.log("add cart",res.data);
+     dispatch({ type : types.POST_PRODCUT_SUCCESS , payload : res.data})
+    })
+    .catch((err) => {
+      return dispatch({type : types.POST_PRODCUT_FAILURE})
+    })
+}
+
+
+
+
+export const deleteCartDataApi = (payload) => (dispatch) => {
+  dispatch({ type: types.DELETE_FROM_CART_REQUEST });
+  console.log(payload);
+  axios
+    .delete(`https://thecoolclub.onrender.com/cart/${payload}`, {
+      headers: { token: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      dispatch({ type: types.DELETE_FROM_CART_SUCCESS });
+      dispatch(handleGetToCart());
+      // console.log(res.data);
+    })
+    .catch((err) => {
+      dispatch({ type: types.DELETE_FROM_CART_FAILURE });
+      // console.log(err);
+    });
+};
+
+

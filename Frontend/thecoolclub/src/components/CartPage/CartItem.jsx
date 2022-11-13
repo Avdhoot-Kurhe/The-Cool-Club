@@ -1,9 +1,10 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { deleteCartDataApi } from "../../Redux/AppReducer/action";
 import { updateCartApi } from "../../Redux/CartReducer/cart.actions";
 
-const CartItem = ({product}) => {
+const CartItem = ({item,deleteCartItem}) => {
   const dispatch = useDispatch();
   const updateQuantity = (id, count) => {
       let payload = {
@@ -13,9 +14,8 @@ const CartItem = ({product}) => {
       dispatch(updateCartApi(payload));
     
   };
-  const deleteCartItem = (id) => {
-    dispatch(deleteCartItem(id));
-
+  const onDeleteHandle = (id) => {
+    deleteCartItem(id)
   };
 
   return (
@@ -30,25 +30,25 @@ const CartItem = ({product}) => {
       px='20px'
     >
       <Box width="150px">
-        <Image src={product.productimageurl} maxW="100%" alt="product-image" />
+        <Image src={item.productimageurl} maxW="100%" alt="product-image" />
       </Box>
       <Box w='20%'>
-        <Text fontWeight="600">{product.title}</Text>
-        <Text>{product.subtitle}</Text>
+        <Text fontWeight="600">{item.title}</Text>
+        <Text>{item.subtitle}</Text>
         <Text color="#e10068">
           Mix & Match Full-Size: Buy 3, Get 3 Free or Buy 2, Get 1 Free
         </Text>
       </Box>
       <Box width="10%">
         <Text fontSize="20px" fontWeight="600">
-          $ {product.price}
+          $ {item.price}
         </Text>
       </Box>
       
       <Flex align="center" w='20%'>
         <Button
-          onClick={() => updateQuantity(product._id, -1)}
-          disabled={product.purchasequantity === 1}
+          onClick={() => updateQuantity(item._id, -1)}
+          disabled={item.purchasequantity === 1}
           colorScheme='gray'
           fontSize="20px"
           p="10px 0"
@@ -56,11 +56,11 @@ const CartItem = ({product}) => {
           -
         </Button>
         <Flex m="0 10px" fontWeight="600" width="20px" justify="center">
-          {product.purchasequantity}
+          {item.quantity}
         </Flex>
         
         <Button
-          onClick={() => updateQuantity(product._id, 1)}
+          onClick={() => updateQuantity(item._id, 1)}
           colorScheme='gray'
           fontSize="20px"
           p="10px 0"
@@ -70,7 +70,7 @@ const CartItem = ({product}) => {
       </Flex>
         <Box w='10%'>
         <Text fontWeight={600} fontSize="20px">
-          ${product.purchasequantity * product.price}
+          ${item.purchasequantity * item.price}
         </Text>
       </Box>
         <Button
@@ -88,7 +88,7 @@ const CartItem = ({product}) => {
             borderRadius: "100%",
             cursor: "pointer",
           }}
-          onClick={(id) => deleteCartItem(product._id)}
+          onClick={(_id) => onDeleteHandle(item._id)}
         >X</Button>
       
     </Flex>
