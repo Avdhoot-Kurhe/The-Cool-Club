@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const cartSchema= new mongoose.Schema({
     productimageurl:{type:String, required:true,},
+    productid:{type:String},
     title:{type:String, required:true}, // product main title
     subtitle:{type:String, required:true}, // product sub title
     category:{type:String, required:true}, // product category eg:Body care
