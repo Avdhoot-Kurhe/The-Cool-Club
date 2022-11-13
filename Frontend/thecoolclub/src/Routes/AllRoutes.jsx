@@ -1,14 +1,13 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import LandingPage from '../Akshay/Pages/LandingPage'
-import Bodycarepage from '../Pages/Bodycarepage'
-import ShippingPage from "../components/pankajsingh/Shipping/ShippingPage"
-import AdminPage from '../Pages/AdminPage'
-import CartPage from '../Pages/CartPage'
-import Login from '../components/pankajsingh/Login/Login'
-import SignUp from '../components/pankajsingh/SignUp/SignUp'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "../Akshay/Pages/LandingPage";
+import Bodycarepage from "../Pages/Bodycarepage";
+import ShippingPage from "../components/pankajsingh/Shipping/ShippingPage";
+import AdminPage from "../Pages/AdminPage";
+import CartPage from "../Pages/CartPage";
+import Login from "../components/pankajsingh/Login/Login";
+import SignUp from "../components/pankajsingh/SignUp/SignUp";
 import ProductDetails from '../components/productDetails/ProductDetails'
-
 
 const AllRoutes = () => {
   return (
@@ -22,7 +21,7 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default AllRoutes
+export default AllRoutes;
