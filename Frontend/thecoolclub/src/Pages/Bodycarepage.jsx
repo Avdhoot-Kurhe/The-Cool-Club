@@ -8,6 +8,8 @@ import BodyCareFilter from './BodyCareFilter';
 import { Button } from '@chakra-ui/react';
 import ProductCard from '../components/ProductCard';
 
+import BodySmallFilter from './BodySmallFilter';
+
 const Bodycarepage = () => {
 
   const [product, setproduct] = useState([]);
@@ -76,13 +78,22 @@ const Bodycarepage = () => {
           <BodyCareFilter />
         </div>
         <div className='BodyCare_main_Div_RightSide'>
+          <div >
+              <h3 style={{fontSize:"1.5rem", fontWeight:'bold'}}>All Body Care</h3>
+              <p style={{border:'1px solid black', backGround:"black"}}></p>
+              <BodySmallFilter />
+          </div>
+          <div className='BodyCare_main_Div_RightSide_mapDiv'>
           {
             product?.map((item) => {
               return (
                 <ProductCard key={item._id} item={item}/>
+
               )
             })
           }
+          </div>
+          
         </div>
       </div>
     </div>                             

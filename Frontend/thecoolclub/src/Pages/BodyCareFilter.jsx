@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom'
+import './smallFilter.css'
 
 const BodyCareFilter = () => {
     const [searchParams , setSearchParams] = useSearchParams();
@@ -16,20 +17,116 @@ const BodyCareFilter = () => {
         setCategory(newCategory)
     }
     console.log(category);
+
+    const topOffer = [
+      {
+        id:1,
+        name : "$3.95 All Body Lotion"
+      },
+      {
+        id:2,
+        name : "Buy 3, Get 1 FREE Select Full-Size Body Care"
+      },
+      {
+        id:3,
+        name : "2/$10, 4/$18, 6/$24 Shea Butter Cleansing Bars"
+      },
+      {
+        id:4,
+        name : "Buy 3, Get 1 FREE Travel, Hand & Lip Care"
+      },
+    ]
+
+    const bathandShower = [
+      {
+        id:1,
+        name:"All Bath & Shower"
+      },
+      {
+        id:2,
+        name:"Body Wash & Shower Gel"
+      },
+      {
+        id:3,
+        name:"Body Scrub"
+      }
+    ]
+
+    const moisturizers = [
+      {
+        id:1,
+        name:"All Moisturizers"
+      },
+      {
+        id:2,
+        name:"Body Lotion"
+      },
+      {
+        id:3,
+        name:"Body Cream"
+      },
+
+    ]
+
+    const fragrance = [
+      {
+        id:1,
+        name:"All Fragrance"
+      },
+      {
+        id:2,
+        name:"Body Sprays & Mists"
+      },
+      {
+        id:3,
+        name:"Perfume & Cologne"
+      },
+    ]
   return (
     <div>
-      <div>
-         <h3>TOP OFFERS</h3>
-         <input type="hidden" name="" />
-         <p onClick={handleOnClick} >$3.95 All Body Lotion  <input type='none'
-            value="$3.95 All Body Lotion"
-            checked={category.includes("$3.95")}
-             />
-        </p>
-           
-         <p onClick={handleOnClick} value="Buy 3, Get 1 FREE Select Full-Size Body Care">Buy 3, Get 1 FREE Select Full-Size Body Care</p>
-         <p onClick={handleOnClick} value="2/$10, 4/$18, 6/$24 Shea Butter Cleansing Bars">2/$10, 4/$18, 6/$24 Shea Butter Cleansing Bars</p>
-      </div>
+        <div>
+           <p>TOP OFFERS</p>
+           <div>
+            {
+              topOffer.map((item) => (
+                <div key={item.id} className="topOfferss_div">{item.name}</div>
+              ))
+            }
+           </div>
+        </div>
+
+        <div style={{marginTop:"4rem"}}>
+           <p>BATH & SHOWER</p>
+           <div>
+            {
+              bathandShower.map((item) => (
+                <div key={item.id} className="topOfferss_div">{item.name}</div>
+              ))
+            }
+           </div>
+          </div>
+
+           <div style={{marginTop:"2.5rem"}}>
+           <p>MOISTURIZERS</p>
+           <div>
+            {
+              moisturizers.map((item) => (
+                <div key={item.id} className="topOfferss_div">{item.name}</div>
+              ))
+            }
+           </div>
+        </div>
+
+        <div style={{marginTop:"2.5rem"}}>
+           <p>FRANGRANCE</p>
+           <div>
+            {
+              fragrance.map((item) => (
+                <div key={item.id} className="topOfferss_div">{item.name}</div>
+              ))
+            }
+           </div>
+        </div>
     </div>
   )
 }
