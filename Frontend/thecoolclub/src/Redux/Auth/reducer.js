@@ -18,7 +18,7 @@ import { POST_LOGIN_FAILURE, POST_LOGIN_REQUEST, POST_LOGIN_SUCCESS } from "./ac
              }
         case POST_LOGIN_SUCCESS :
             localStorage.setItem("isAuth", JSON.stringify(true))
-            localStorage.setItem("token",payload)
+            localStorage.setItem("token",payload.token)
             return {
                 ...state,
                 isAuth : true,

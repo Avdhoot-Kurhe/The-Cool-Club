@@ -109,7 +109,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const toast = useToast();
-  const isAuth  = JSON.parse(localStorage.getItem("isAuth")) || false;
+  const isAuth = JSON.parse(localStorage.getItem("isAuth")) || false;
   // const store = useSelector(store => store);
   // console.log(store);
   return (
@@ -161,20 +161,23 @@ const Navbar = () => {
                 cursor="pointer"
                 display={isAuth ? "none" : "block"}
                 onClick={() => {
-                  console.log(isAuth)
+                  console.log(isAuth);
                   if (isAuth == false) {
                     navigate("/login");
                   }
                 }}
                 src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw8f5c8e40/images/svg-icons/UI-MyAccount.svg?yocs=o_s_"
               />
-              <Text onClick={() => {
-                logout();
-                window.location.reload();
-              }} fontSize="15px" fontWeight="bold" display={isAuth ? "block" : "none"}>
-                {
-                  "User"
-                }
+              <Text
+                onClick={() => {
+                  logout();
+                  window.location.reload();
+                }}
+                fontSize="15px"
+                fontWeight="bold"
+                display={isAuth ? "block" : "none"}
+              >
+                {"User"}
               </Text>
               <Image
                 h="30px"
@@ -230,10 +233,34 @@ const Navbar = () => {
           <Link onClick={onOpen}>
             <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw1efa6c4a/images/svg-icons/UI-Menu-v2.svg?yocs=o_s_"></Image>
           </Link>
-          <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dwfc4c9aaa/images/svg-icons/UI-Search-v2.svg?yocs=o_s_"></Image>
-          <Image h="50px" src={Logo} />
-          <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw6c6ff748/images/svg-icons/UI-Tag-v2.svg?yocs=o_s_"></Image>
-          <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1667990775125/images/svg-icons/UI-AddToBag-v2.svg?yocs=o_s_" />
+          <Image
+            cursor="pointer"
+            src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dwfc4c9aaa/images/svg-icons/UI-Search-v2.svg?yocs=o_s_"
+          ></Image>
+          <Image
+            h="50px"
+            cursor="pointer"
+            src={Logo}
+            onClick={() => navigate("/")}
+          />
+          <Image
+            cursor="pointer"
+            src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw6c6ff748/images/svg-icons/UI-Tag-v2.svg?yocs=o_s_"
+          ></Image>
+          <Image
+            cursor="pointer"
+            // display={isAuth ? "none" : "block"}
+            onClick={() => {
+              // console.log(isAuth);
+              if (isAuth == false) {
+                navigate("/login");
+              }
+              else{
+                navigate("/cart")
+              }
+            }}
+            src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1667990775125/images/svg-icons/UI-AddToBag-v2.svg?yocs=o_s_"
+          />
         </HStack>
       </Box>
       <>
@@ -251,11 +278,11 @@ const Navbar = () => {
             </DrawerHeader>
 
             <VStack gap="30px">
-              <HStack w="90%">
+              {/* <HStack w="90%">
                 <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dwfc4c9aaa/images/svg-icons/UI-Search-v2.svg?yocs=o_s_"></Image>
                 <Input placeholder="Search" variant="flushed" />
-              </HStack>
-              <VStack alignItems="flex-start">
+              </HStack> */}
+              {/* <VStack alignItems="flex-start">
                 <HStack>
                   <Image
                     h="30px"
@@ -276,24 +303,20 @@ const Navbar = () => {
                 <Link fontSize="13px" textDecoration="underline" href="/">
                   Set Store
                 </Link>
+              </VStack> */}
+              <VStack justifyContent="flex-start" alignItems="start">
+                {buttonDetails.map((el) => {
+                  return (
+                    <Link
+                      onClick={() => {
+                        navigate(el.link);
+                      }}
+                    >
+                      {el.name}
+                    </Link>
+                  );
+                })}
               </VStack>
-              <Divider />
-              <HStack>
-                <Image src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw6c6ff748/images/svg-icons/UI-Tag-v2.svg?yocs=o_s_"></Image>
-                <Text>TOP OFFERS</Text>
-              </HStack>
-              <Divider />
-              <Accordion w="100%">
-                <AccordionItem>
-                  <AccordionButton w="100%">
-                    <Box flex="1" textAlign="left">
-                      BODY CARE
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                  <AccordionPanel pb={4}></AccordionPanel>
-                </AccordionItem>
-              </Accordion>
             </VStack>
           </DrawerContent>
         </Drawer>

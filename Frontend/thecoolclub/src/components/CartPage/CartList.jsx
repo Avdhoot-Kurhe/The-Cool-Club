@@ -31,7 +31,7 @@ const CartList = () => {
           token: `Bearer ${localStorage.getItem("token")}`
         }})
         .then((res) => {
-          // console.log("res",res);
+          console.log("cartdata",res);
           setItem(res.data);
         })
     }
