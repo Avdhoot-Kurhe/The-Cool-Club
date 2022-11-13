@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getProductsData } from "../Redux/AppReducer/action";
 import BodyCareFilter from './BodyCareFilter';
+import { Button } from '@chakra-ui/react';
+import ProductCard from '../components/ProductCard';
+
 import BodySmallFilter from './BodySmallFilter';
 
 const Bodycarepage = () => {
@@ -84,16 +87,8 @@ const Bodycarepage = () => {
           {
             product?.map((item) => {
               return (
-                <div className='BodyCare_main_Div_AllProducts'>
-                   <img src={item.productimageurl} alt={item.title} />
-                   <p className='title_Div'>{item.title}</p>
-                   <p className='substitle_Div'>{item.subtitle}</p>
-                   <p className='price_Div'>{"$"}{item.price}</p>
-                   <p className='mixmatch_Div'>{item.mixnmatch}</p>
-                   <div className='addToBag_button_main_Div'>
-                     <button>ADD TO BAG</button>
-                   </div>
-                </div>
+                <ProductCard key={item._id} item={item}/>
+
               )
             })
           }
